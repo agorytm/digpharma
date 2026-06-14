@@ -241,6 +241,7 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
   .hdr-search{display:none;}
   .lang-sw{display:none;}
   .hdr-logo{font-size:0;}
+  body[data-view='home'] .hdr-logo{font-size:16px;}
   .hdr-menu{display:block;}
   .mob-nav{
     position:fixed;inset:0;top:60px;z-index:90;
@@ -455,7 +456,7 @@ if(window.FIREBASE_READY){
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-<body>
+<body data-view="home">
 <!-- ── TRANSIT ── -->
 <div id="transit" aria-hidden="true">
   <svg><g id="tWorld">
@@ -1635,6 +1636,7 @@ function switchView(to){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('v-'+to).classList.add('active');
   current=to;
+  document.body.dataset.view=to;
   if(to==='home')setTimeout(()=>{if(typeof homeGlobeResize==='function')homeGlobeResize();},50);
   try{window.scrollTo({top:0,behavior:'instant'});}catch(e){window.scrollTo(0,0);}}
 function goSection(cardEl,id,label){history.pushState({view:id},'');if(cardEl){playTransition(cardEl,label,()=>switchView(id));}else{switchView(id);}}
