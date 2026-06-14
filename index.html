@@ -1742,7 +1742,7 @@ function handleSearch(q){
         lastSec = h.section;
       }
       const excerpt = h.text.replace(/\s+/g,' ').slice(0,90);
-      html += '<div class="sr-item" onclick="searchGoTo('' + h.view + '','' + escHtml(h.title) + '')">'
+      html += '<div class="sr-item" onclick="searchGoTo(\'' + h.view + '\',\'' + escHtml(h.title) + '\')">'
         + '<div class="sr-title">' + escHtml(h.title) + '</div>'
         + '<div class="sr-excerpt">' + escHtml(excerpt) + '…</div>'
         + '</div>';
