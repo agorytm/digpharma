@@ -227,6 +227,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-fo
 
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surface);}
+.home-framing{font-size:.78rem;color:var(--ink-3);font-style:italic;margin:6px 0 20px;letter-spacing:.01em;}
+.f-framing{font-size:.73rem;color:var(--ink-3);font-style:italic;margin:0 0 10px;letter-spacing:.01em;}
 .fi{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
 .fl{font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-3);}
 .fl span{color:var(--accent);}
@@ -538,6 +540,7 @@ if(window.FIREBASE_READY){
   <div class="home-hero">
     <div class="home-text">
       <h1 data-fr="Reprenez le contrôle<br>de votre santé." data-en="Take back control<br>of your health.">Reprenez le contrôle<br>de votre santé.</h1>
+      <p class="home-framing" data-fr="Un projet de design spéculatif explorant les conditions d'une autonomie sanitaire collective." data-en="A speculative design project exploring the conditions for collective health autonomy.">Un projet de design spéculatif explorant les conditions d'une autonomie sanitaire collective.</p>
       <p data-fr="Les brevets expirent. Les pharmacopées sont publiques. Les précurseurs sont légaux. DIG PHARMA documente comment produire des médicaments réels dans un labo off-grid — aspirine, paracétamol, antiseptiques, anesthésiques locaux — depuis des ingrédients accessibles, avec un protocole vérifiable." data-en="Patents expire. Pharmacopoeias are public. Precursors are legal. DIG PHARMA documents how to produce real medicines in an off-grid lab — aspirin, paracetamol, antiseptics, local anaesthetics — from accessible ingredients, with verifiable protocols.">Les molécules qui sauvent des vies ont été brevetées, tarifées et cadenassées. DIG PHARMA est un système open-source pour produire, stocker et distribuer des médicaments essentiels sans dépendre d'aucune industrie pharmaceutique.</p>
       <div class="home-netstat">
         <span class="live"></span>
@@ -586,6 +589,8 @@ if(window.FIREBASE_READY){
 
   <footer>
     <div class="fi">
+      <p class="f-framing fr-only">Un projet de design spéculatif explorant les conditions d'une autonomie sanitaire collective.</p>
+      <p class="f-framing en-only">DIG PHARMA — A speculative design project exploring the conditions for collective health autonomy.</p>
       <div class="flinks">
         <a href="javascript:void(0)" onclick="openModal('modal-sources')">Sources</a>
         <a href="javascript:void(0)" onclick="openModal('modal-legal')">Mentions légales</a>
