@@ -486,7 +486,7 @@ if(window.FIREBASE_READY){
   <div class="home-hero">
     <div class="home-text">
       <h1 data-fr="L'industrie pharmaceutique<br>n'est pas votre alliée." data-en="The pharmaceutical industry<br>is not your ally.">L'industrie pharmaceutique<br>n'est pas votre alliée.</h1>
-      <p data-fr="Les molécules qui sauvent des vies ont été brevetées, tarifées et cadenassées par des actionnaires. DIG PHARMA est un système open-source pour produire, stocker et distribuer des médicaments essentiels — sans dépendre d'aucune industrie pharmaceutique." data-en="Life-saving molecules have been patented, priced and locked away by shareholders. DIG PHARMA is an open-source system to produce, store and distribute essential medicines — without depending on any pharmaceutical industry.">Les molécules qui sauvent des vies ont été brevetées, tarifées et cadenassées par des actionnaires. DIG PHARMA est un système open-source pour produire, stocker et distribuer des médicaments essentiels — sans dépendre d'aucune industrie pharmaceutique.</p>
+      <p data-fr="Les brevets expirent. Les pharmacopées sont publiques. Les précurseurs sont légaux. DIG PHARMA documente comment produire des médicaments réels dans un labo off-grid — aspirine, paracétamol, antiseptiques, anesthésiques locaux — depuis des ingrédients accessibles, avec un protocole vérifiable." data-en="Patents expire. Pharmacopoeias are public. Precursors are legal. DIG PHARMA documents how to produce real medicines in an off-grid lab — aspirin, paracetamol, antiseptics, local anaesthetics — from accessible ingredients, with verifiable protocols.">Les molécules qui sauvent des vies ont été brevetées, tarifées et cadenassées par des actionnaires. DIG PHARMA est un système open-source pour produire, stocker et distribuer des médicaments essentiels — sans dépendre d'aucune industrie pharmaceutique.</p>
       <div class="home-netstat">
         <span class="live"></span>
         <span data-fr="1 lab actif · Montreuil" data-en="1 active lab · Montreuil">1 lab actif · Montreuil</span>
@@ -894,10 +894,12 @@ if(window.FIREBASE_READY){
     </div>
   </div>
   <div class="tabs">
+    <button class="tab" onclick="showTab(this,'t-prec')" data-fr="Précurseurs chimiques" data-en="Chemical precursors">Précurseurs chimiques</button>
     <button class="tab on" onclick="showTab(this,'t-sup')" data-fr="Supermarché / Pharmacie (25)" data-en="Supermarket / Pharmacy (25)">Supermarché / Pharmacie (25)</button>
     <button class="tab" onclick="showTab(this,'t-cul')" data-fr="À cultiver (15)" data-en="To grow (15)">À cultiver (15)</button>
     <button class="tab" onclick="showTab(this,'t-for')" data-fr="Forêt / Cueillette (15)" data-en="Forest / Foraging (15)">Forêt / Cueillette (15)</button>
   </div>
+  <div class="tab-pane " id="t-prec"><div class="mat-card"><div class="mat-ph"></div><h4>Para-aminophénol</h4><div class="mat-sub">Précurseur paracétamol</div><p>Poudre blanche · Amazon, eBay, Sigma-Aldrich · 15–30 €/kg · Légal · Aussi vendu en teinture capillaire</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Acide salicylique</h4><div class="mat-sub">Précurseur aspirine</div><p>Poudre blanche · Amazon, cosmétique anti-acné, eBay · 5–15 €/kg · Légal</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Anhydride acétique</h4><div class="mat-sub">Réactif d'acétylation</div><p>Liquide incolore, odeur vinaigre fort · TCI, Fisher Scientific, eBay chimie · 10–20 €/L · Légal (surveillance en France pour usage de synthèse)</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Benzocaïne poudre</h4><div class="mat-sub">Anesthésique local topique</div><p>Poudre blanche · Amazon, eBay, cosmétique · 10–30 €/100 g · Légal</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Lidocaïne base</h4><div class="mat-sub">Anesthésique local</div><p>Poudre blanche · Sigma-Aldrich, TCI · 30–80 €/25 g · Légal sans prescription en France</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Eau oxygénée 30–35 %</h4><div class="mat-sub">Précurseur H₂O₂ 3 %</div><p>Liquide incolore très oxydant · Drogueries, piscines (traitement eau) · 5–10 €/L · Gants + lunettes obligatoires</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Iode en cristaux (I₂)</h4><div class="mat-sub">Antiseptique, Lugol</div><p>Cristaux brun-noir · Pharmacies vrac, photographie argentique, chimie · 10–20 €/100 g</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Iodure de potassium (KI)</h4><div class="mat-sub">Solubilisant de l'iode</div><p>Poudre blanche · Pharmacies, chimie · 10–15 €/100 g</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Chlorure de potassium (KCl)</h4><div class="mat-sub">Électrolyte SRO renforcée</div><p>Poudre blanche · Rayons « sel allégé » en supermarché (NoSalt, LoSalt) · 3–5 €/250 g</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Acide citrique</h4><div class="mat-sub">Stabilisant, conservateur</div><p>Poudre blanche · Supermarchés (rayon conserves), Amazon · 2–5 €/kg</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Chlorure ferrique (FeCl₃)</h4><div class="mat-sub">Réactif contrôle qualité</div><p>Poudre orange · Drogueries (mordant teinture), chimie · 3–8 €/100 g</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Carbomère (gel neutre)</h4><div class="mat-sub">Base galénique gel</div><p>Poudre blanche → gel transparent · Cosmétique DIY, eBay · 5–15 €/100 g</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Beurre de cacao / Witepsol</h4><div class="mat-sub">Base suppositoires</div><p>Fond à 37 °C · Magasins bio, pharmacies, Amazon · 5–15 €/kg</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Plaques TLC silice (60 F254)</h4><div class="mat-sub">Contrôle qualité TLC</div><p>Plaques alu ou plastique · Amazon, eBay, TCI · 10–20 €/25 plaques</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Lampe UV 254 nm</h4><div class="mat-sub">Révélateur TLC</div><p>Stylo ou lampe portative · Amazon · 5–15 €</p></div></div>
   <div class="tab-pane on" id="t-sup"><div class="mat-card"><div class="mat-ph"></div><h4>Sel de mer / NaCl</h4><div class="mat-sub">Osmotique, conservateur</div><p>Sérum physiologique 0,9% · Gargarismes · Conservation</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Vinaigre blanc 8°</h4><div class="mat-sub">Acide acétique</div><p>Antimicrobien de surface · Antifongique cutané</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Alcool éthylique 95°</h4><div class="mat-sub">Éthanol</div><p>Antiseptique · Solvant pour extractions et teintures</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Huile d'olive vierge</h4><div class="mat-sub">Oléique, polyphénols</div><p>Excipient universel · Base pommades · Émollient</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Miel brut toutes fleurs</h4><div class="mat-sub">H₂O₂, pH acide, propolis</div><p>Antibactérien · Cicatrisant · Base sirops</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Ail frais</h4><div class="mat-sub">Allicine (libérée à l'écrasement)</div><p>Antibactérien large spectre · Antifongique · Antiparasitaire</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Gingembre frais</h4><div class="mat-sub">Gingérols, shogaols</div><p>Anti-inflammatoire · Antiémétique · Antipyrétique léger</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Curcuma en poudre</h4><div class="mat-sub">Curcumine</div><p>Anti-inflammatoire chronique · Hépatoprotecteur · Antioxydant</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Citron frais</h4><div class="mat-sub">Acide citrique, vitamine C</div><p>Antiseptique buccal · Reminéralisant · Conservateur</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Bicarbonate de soude</h4><div class="mat-sub">NaHCO₃</div><p>Antiacide · Tampon pH préparations · Antiseptique buccal</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Eau oxygénée 3%</h4><div class="mat-sub">H₂O₂</div><p>Antiseptique plaies · Débridement mécanique (effervescence)</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Charbon végétal activé</h4><div class="mat-sub">Carbone macroporeux</div><p>Adsorbant intoxications · Anti-ballonnements</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Argile verte illite</h4><div class="mat-sub">Silicate alumineux</div><p>Anti-infectieuse locale · Adsorbante · Cicatrisante</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Sucre blanc (saccharose)</h4><div class="mat-sub">Osmotique</div><p>Conservateur · Base sirops · Pansement osmotique plaies</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Café moulu (caféine)</h4><div class="mat-sub">Caféine, théophylline</div><p>Adjuvant antalgique · Stimulant respiratoire</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Paracétamol (pharmacie)</h4><div class="mat-sub">Para-acétamino-phénol</div><p>Antipyrétique · Antalgique palier 1</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Aspirine (pharmacie)</h4><div class="mat-sub">Acide acétylsalicylique</div><p>Anti-inflammatoire · Antiplaquettaire · Antipyrétique</p></div><div class="mat-card"><div class="mat-ph"></div><h4>SRO OMS sachet</h4><div class="mat-sub">Na+, K+, Glucose, Cl−</div><p>Réhydratation orale infections digestives</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Vaseline blanche</h4><div class="mat-sub">Paraffine</div><p>Excipient inerte · Pansement occlusif · Protection peau</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Glycérine végétale</h4><div class="mat-sub">Glycérol</div><p>Humectant · Co-solvant · Lubrifiant · Base suppositoires</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Savon de Marseille 72%</h4><div class="mat-sub">Triglycérides, soude</div><p>Tensioactif · Dégraissant · Décontamination mains</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Vinaigre de cidre</h4><div class="mat-sub">Acide malique + acétique</div><p>Antifongique cutané · Régulateur pH · Oreilles</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Huile de coco vierge</h4><div class="mat-sub">Acide laurique C12</div><p>Antimicrobien · Excipient pommades · Antifongique</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Argile blanche kaolin</h4><div class="mat-sub">Silicate d'aluminium</div><p>Poudre protectrice · Excipient comprimés DIY</p></div><div class="mat-card"><div class="mat-ph"></div><h4>Propolis (ruche ou apiculteur)</h4><div class="mat-sub">Flavonoïdes, acides phénoliques</div><p>Antibactérien · Antifongique · Antiviral · Cicatrisant</p></div></div>
   <div class="tab-pane " id="t-cul">
 <p style="color:var(--ink-2);font-size:.88rem;margin:0 0 16px 0;line-height:1.5;">Quantités cibles pour un groupe de 10 personnes sur un an. Les parties récoltées (feuilles, fleurs, racines) sont indiquées en poids sec sauf mention contraire.</p>
@@ -942,333 +944,486 @@ if(window.FIREBASE_READY){
 <div id="v-preparer" class="view">
 <div class="page-wrap">
   <div class="dhead">
-    
     <div class="t">
       <div class="crumb">DIG PHARMA · Pilier 4</div>
-      <h1 data-fr="Préparer les formules" data-en="Prepare the formulas">Préparer les formules</h1>
-      <p data-fr="40 formules sur 14 blocs. Chaque formule : ingrédients, procédé, dosage, source scientifique." data-en="40 formulas across 14 groups. Each formula: ingredients, method, dosage, scientific source.">40 formules · 14 blocs · Sources PubMed/WHO.</p>
+      <h1 data-fr="Synthèse pharmaceutique" data-en="Pharmaceutical synthesis">Synthèse pharmaceutique</h1>
+      <p data-fr="8 blocs · 24 protocoles. Chaque fiche : précurseurs accessibles, procédé étape par étape, contrôle qualité, source pharmacopée." data-en="8 blocs · 24 protocols. Each sheet: accessible precursors, step-by-step process, quality control, pharmacopoeia source.">8 blocs · 24 protocoles · Sources pharmacopée / brevets expirés.</p>
     </div>
   </div>
-  <div><div class="bloc-header" onclick="toggleBloc(this)">
+
+  <div>
+
+<!-- ─── 01 ANALGÉSIQUES ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">01</div>
-  <div class="bloc-title" data-fr="Antiseptiques" data-en="Antiseptics"><span data-gloss="antisepsie" style="border-bottom:1px dashed var(--accent);cursor:pointer;">antiseptiques</span></div>
-  <div class="bloc-count" data-fr="4 formules" data-en="4 formulas">4 formules</div>
+  <div class="bloc-title">Analgésiques — Antifièvre</div>
+  <div class="bloc-count">3 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Alcool désinfectant 70°</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Alcool 95° + eau distillée</div>
-  <div class="f-label">Procédé</div><div class="f-row">Diluer 73,7mL alcool 95° dans 26,3mL eau distillée</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Surfaces et mains. Laisser 30s. Ne pas rincer.</div>
-  <span class="f-badge">WHO AHF v3</span>
-</div><div class="formula-card">
-  <h4>Dakin de terrain</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Eau de Javel 2,6% + bicarbonate</div>
-  <div class="f-label">Procédé</div><div class="f-row">10mL Javel 2,6% + 990mL eau + 2,5g bicarbonate</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Nettoyage plaies, linge, surfaces. NE PAS avaler.</div>
-  <span class="f-badge">Pharmacopée Fr.</span>
-</div><div class="formula-card">
-  <h4><span data-gloss="antisepsie" style="border-bottom:1px dashed var(--accent);cursor:pointer;">antiseptique</span> végétal</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Alcool 70° + huile essentielle de thym 2% + huile essentielle de lavande 1%</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger à froid. Agiter avant usage.</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Plaies superficielles. 2×/j max.</div>
-  <span class="f-badge">Thymol: J Antimicrob</span>
-</div><div class="formula-card">
-  <h4>Lugol (substitut)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Teinture d'iode 2% + alcool 70°</div>
-  <div class="f-label">Procédé</div><div class="f-row">Diluer teinture d'iode 1/10 dans alcool 70°</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Désinfection peau avant incision. Ne pas avaler.</div>
-  <span class="f-badge">USP 43</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Paracétamol — synthèse complète</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">L'analgésique le plus utilisé au monde. Réduit la douleur et la fièvre. Produit depuis 1956, brevet expiré, procédé dans la Pharmacopée Européenne.</div>
+  <div class="f-label">Précurseurs (pour 10 g)</div>
+  <div class="f-row"><strong>Para-aminophénol</strong> (poudre blanche, 10,9 g) — Amazon, eBay, Sigma-Aldrich, 15–30 €/kg. Aussi vendu comme intermédiaire de teinture capillaire. Légal partout.<br><strong>Anhydride acétique</strong> (10,5 mL) — fournisseurs chimie (TCI, Fisher), 10–20 €/L. Odeur forte de vinaigre concentré — travailler en extérieur ou sous ventilation.<br><strong>Eau distillée</strong> (12 mL)</div>
+  <div class="f-label">Matériel</div>
+  <div class="f-row">Bécher 200 mL ou casserole inox · Thermomètre · Plaque chauffante ou bain-marie · Filtre à café · Balance précise (±0,01 g) · Gants nitrile + lunettes</div>
+  <div class="f-label">Procédé étape par étape</div>
+  <div class="f-row">
+    1. Peser 10,9 g de para-aminophénol dans le bécher.<br>
+    2. Ajouter 12 mL d'eau distillée. Mélanger.<br>
+    3. Ajouter <em>lentement</em> 10,5 mL d'anhydride acétique en agitant sans arrêt — la réaction dégage de la chaleur, c'est normal.<br>
+    4. Chauffer à 85 °C pendant 15 minutes en agitant régulièrement.<br>
+    5. Retirer du feu. Laisser refroidir 30 min à température ambiante.<br>
+    6. Mettre au réfrigérateur 1 h — les cristaux blancs se forment.<br>
+    7. Filtrer sur papier café. Rincer avec 20 mL d'eau froide.<br>
+    8. Sécher à l'air ou au four à 60 °C pendant 2 h.<br>
+    <strong>Rendement attendu : 12–13 g (85–90 %)</strong>
+  </div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row"><strong>Test chlorure ferrique (FeCl₃) :</strong> dissoudre une pincée dans de l'eau, ajouter 2 gouttes de solution FeCl₃ (chlorure de fer — droguerie ou fournisseur chimie). Incolore = pur. Violet-rouge = para-aminophénol résiduel, recommencer la filtration-rinçage.<br><strong>Point de fusion :</strong> 169–170 °C (avec thermomètre de précision).<br><strong>Aspect :</strong> poudre blanche fine, sans odeur forte.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">3–5 ans en flacon hermétique, à l'abri de la lumière et de l'humidité.</div>
+  <div class="f-label">Erreurs courantes</div>
+  <div class="f-row">Ajouter l'anhydride acétique trop vite → projection. Toujours lentement. / Ne pas mettre au frigo → cristaux ne se forment pas, rendement faible. / Séchage insuffisant → comprimés moisissent.</div>
+  <span class="f-badge"><a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener">Pharmacopée Européenne 10.0</a></span>
+  <span class="f-badge"><a href="https://www.usp.org/sites/default/files/usp/document/harmonization/gen-chapter/acetaminophen.pdf" target="_blank" rel="noopener">USP 43 — Acetaminophen</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Aspirine (acide acétylsalicylique) — synthèse classique</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Anti-douleur, anti-fièvre, anti-inflammatoire et anticoagulant (fluidifie le sang). Synthèse connue depuis 1897, c'est le TP de chimie de terminale. 2 précurseurs, 30 minutes.</div>
+  <div class="f-label">Précurseurs (pour 10 g)</div>
+  <div class="f-row"><strong>Acide salicylique</strong> (13,8 g) — Amazon, eBay, cosmétique bio (utilisé contre l'acné), 5–15 €/kg.<br><strong>Anhydride acétique</strong> (14 mL) — même source que paracétamol.<br><strong>Acide phosphorique 85 %</strong> (5 gouttes, catalyseur) — droguerie, magasin brassage, 5–10 €/L.</div>
+  <div class="f-label">Procédé étape par étape</div>
+  <div class="f-row">
+    1. Peser 13,8 g d'acide salicylique dans un bécher.<br>
+    2. Ajouter 14 mL d'anhydride acétique.<br>
+    3. Ajouter 5 gouttes d'acide phosphorique (ça accélère la réaction).<br>
+    4. Chauffer à 85 °C pendant 15 minutes en agitant.<br>
+    5. Hors feu, ajouter lentement 20 mL d'eau froide — ça mousse légèrement (l'excès d'anhydride réagit avec l'eau).<br>
+    6. Laisser refroidir 30 min puis mettre au frigo 1 h.<br>
+    7. Filtrer, rincer à l'eau froide, sécher.<br>
+    <strong>Rendement attendu : 13–14 g (88–92 %)</strong>
+  </div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row"><strong>Test FeCl₃ :</strong> aucune coloration violette = pur. Violet = acide salicylique résiduel — recristalliser dans éthanol/eau (1:3) chaud, refroidir, filtrer.<br><strong>Odeur :</strong> légèrement vinaigrée après séchage = normale. Si très forte odeur persistante = acide acétique résiduel, remettre à sécher.</div>
+  <div class="f-label">Attention</div>
+  <div class="f-row">Ne pas donner aux enfants de moins de 16 ans (risque de syndrome de Reye — complication neurologique grave). Anticoagulant — éviter avant une opération.</div>
+  <span class="f-badge"><a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener">Pharmacopée Européenne 10.0</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Ibuprofène — niveau avancé</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Anti-inflammatoire non stéroïdien (bloque l'inflammation à la source). Plus puissant que l'aspirine pour les douleurs musculaires et articulaires.</div>
+  <div class="f-label">Difficulté</div>
+  <div class="f-row">Synthèse en 3 étapes catalytiques (procédé Hoechst simplifié). Accessible avec un labo équipé (colonne de distillation, solvants anhydres). Pas un premier projet — faire paracétamol et aspirine d'abord.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row"><strong>Isobutylbenzène</strong> (précurseur principal) + chlorure d'acétyle + chlorure d'aluminium (catalyseur Lewis) → dans des fournisseurs chimie industrielle (Sigma-Aldrich, TCI, Acros). Tous légaux.</div>
+  <div class="f-label">Référence</div>
+  <div class="f-row">Procédé Boots-Hoechst (brevet expiré 1985). Documenté dans J. Chem. Ed. 2001 comme protocole de synthèse universitaire.</div>
+  <span class="f-badge"><a href="https://pubs.acs.org/doi/10.1021/ed078p839" target="_blank" rel="noopener">J. Chem. Ed. 2001 — Ibuprofen synthesis</a></span>
+</div>
+
+</div><!-- /bloc-body 01 -->
+
+<!-- ─── 02 ANTISEPTIQUES ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">02</div>
-  <div class="bloc-title" data-fr="Réhydratation" data-en="Rehydration">Réhydratation</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
+  <div class="bloc-title">Antiseptiques — Désinfectants</div>
+  <div class="bloc-count">4 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4><span data-gloss="sro" style="border-bottom:1px dashed var(--accent);cursor:pointer;">Solution de Réhydratation Orale</span> basique (formule Organisation Mondiale de la Santé)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sel 2,5g + Sucre 20g + Bicarbonate 2,5g / 1L</div>
-  <div class="f-label">Procédé</div><div class="f-row">Dissoudre dans 1L eau bouillie refroidie</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">250mL toutes les 15 min (adulte). Vomissements : 5mL/min.</div>
-  <span class="f-badge">WHO ORS 2002</span>
-</div><div class="formula-card">
-  <h4>Solution de Réhydratation Orale renforcée (électrolytes)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">chlorure de sodium (NaCl) 2,6g + chlorure de potassium (KCl) 1,5g + Glucose 13,5g / 1L</div>
-  <div class="f-label">Procédé</div><div class="f-row">Dissoudre dans 1L eau stérilisée. Conserver 24h max.</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Choléra, déshydratation sévère : 100mL/kg en 3h.</div>
-  <span class="f-badge">UNICEF/WHO 2006</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Alcool éthylique grade médical — 70° et 95°</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">L'éthanol à 70 % tue bactéries et virus sur la peau et les surfaces. À 95 %, il sert de solvant pour d'autres préparations. C'est la base de presque tout le reste.</div>
+  <div class="f-label">Précurseur</div>
+  <div class="f-row"><strong>Alcool agricole pur 95–96°</strong> (eau-de-vie, alcool de betterave alimentaire) — épiceries spécialisées, distillateurs, Amazon (Everclear), 10–25 €/L.<br><strong>Ne jamais utiliser l'alcool à brûler</strong> — il contient du méthanol (toxique) et des dénaturants. Si tu n'as que ça, une redistillation avec un alambic permet de le purifier (méthanol bout à 64,7 °C, éthanol à 78,4 °C — séparer les deux fractions).</div>
+  <div class="f-label">Pour obtenir 70° depuis 95°</div>
+  <div class="f-row">Formule de dilution : prendre <strong>737 mL d'alcool à 95°</strong> + <strong>263 mL d'eau distillée</strong> = 1 litre à 70°.</div>
+  <div class="f-label">Pour obtenir 95° (distillation)</div>
+  <div class="f-row">Chauffer de l'alcool alimentaire fort dans un alambic. Collecter la fraction qui distille entre 78 et 79 °C — c'est l'éthanol pur.</div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row"><strong>Alcoomètre</strong> (pèse-alcool, 5–10 € sur Amazon) — mesure directe du degré. Odeur : alcool pur, sans odeur de plastique ou de solvant.</div>
+  <span class="f-badge"><a href="https://www.who.int/docs/default-source/documents/emergencies/coronavirus/aide-memoire-alcohol-based-handrub.pdf" target="_blank" rel="noopener">WHO AHF Formulation v3</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Solution de Dakin stabilisée</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Antiseptique liquide pour nettoyer les plaies infectées. Plus doux que l'eau oxygénée pure, ne brûle pas les tissus vivants. Médicament essentiel OMS. Zéro synthèse complexe — 3 ingrédients supermarché.</div>
+  <div class="f-label">Précurseurs (pour 1 litre)</div>
+  <div class="f-row"><strong>Eau de Javel à 2,6 % de chlore actif</strong> (standard France) — 800 mL<br><strong>Eau oxygénée à 3 % (10 volumes)</strong> — 200 mL — pharmacies ou supermarchés<br><strong>Bicarbonate de soude</strong> — 4 g</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">Verser 800 mL de Javel dans un flacon opaque. Ajouter 200 mL d'eau oxygénée. Ajouter 4 g de bicarbonate (stabilisant du pH). Mélanger doucement. La couleur légèrement jaune est normale.</div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row">Papier pH : doit lire 8–9 (basique). Odeur de chlore légère. Si odeur très forte de Javel → trop concentré, diluer.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">2 semaines maximum en flacon opaque fermé — l'hypochlorite (le principe actif) se dégrade vite à la lumière. Préparer en petites quantités.</div>
+  <span class="f-badge"><a href="https://pharmacopee.ansm.sante.fr/" target="_blank" rel="noopener">Pharmacopée Française — Dakin</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Eau oxygénée stabilisée 3 % depuis concentré</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">L'eau oxygénée (peroxyde d'hydrogène H₂O₂) à 3 % nettoie les plaies par effervescence. Produite en diluant du concentré industriel — 10 fois moins cher qu'en pharmacie.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row"><strong>Eau oxygénée 30–35 % (grade alimentaire ou industriel)</strong> — drogueries, en ligne, 5–10 €/L. Attention : concentré très oxydant.<br><strong>Eau distillée</strong><br><strong>Acide citrique</strong> (1 g/L, stabilisateur) — supermarchés, rayons conserves.</div>
+  <div class="f-label">Précautions OBLIGATOIRES</div>
+  <div class="f-row">Lunettes + gants épais pour manipuler le concentré 30–35 %. Brûle la peau et les yeux en quelques secondes. En cas de contact, rincer abondamment à l'eau 15 min.</div>
+  <div class="f-label">Procédé (pour 1 litre à 3 %)</div>
+  <div class="f-row">Verser <strong>100 mL</strong> d'eau oxygénée à 30 % dans <strong>900 mL</strong> d'eau distillée (toujours ajouter le concentré dans l'eau, jamais l'inverse). Ajouter 1 g d'acide citrique. Mettre en flacon brun fermé.</div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row">Verser une goutte sur une petite plaie ou une pincée de levure — l'effervescence (mousse) confirme que le produit est actif.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">12 mois en flacon brun hermétique, à l'abri de la chaleur. Se dégrade accélérée si exposé à la lumière ou à la chaleur.</div>
+  <span class="f-badge"><a href="https://www.who.int/publications/i/item/9789241547925" target="_blank" rel="noopener">WHO EMP 2010</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Solution iodée (Lugol simplifié)</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Antiseptique à large spectre (bactéries, virus, champignons) pour la désinfection des plaies avant suture ou pour stériliser de l'eau de boisson.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row"><strong>Iode en cristaux</strong> (I₂) — fournisseurs chimie ou photographie argentique (10–20 €/100 g)<br><strong>Iodure de potassium</strong> (KI, augmente la solubilité) — même sources, 10–15 €/100 g<br><strong>Eau distillée</strong></div>
+  <div class="f-label">Procédé (Lugol 1 %)</div>
+  <div class="f-row">Dissoudre 10 g d'iodure de potassium dans 100 mL d'eau. Ajouter 5 g d'iode en cristaux. Agiter jusqu'à dissolution complète (la solution devient brun-foncé). Compléter à 500 mL.</div>
+  <div class="f-label">Usages</div>
+  <div class="f-row">Désinfection cutanée avant incision. Stérilisation eau de boisson : 2 gouttes/litre, attendre 30 min.</div>
+  <span class="f-badge"><a href="https://www.usp.org/" target="_blank" rel="noopener">USP 43 — Strong Iodine Solution</a></span>
+</div>
+
+</div><!-- /bloc-body 02 -->
+
+<!-- ─── 03 SOLUTIONS STÉRILES ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">03</div>
-  <div class="bloc-title" data-fr="Antipyrétiques & Antalgiques" data-en="Antipyretics & Analgesics">Antipyrétiques & Antalgiques</div>
-  <div class="bloc-count" data-fr="4 formules" data-en="4 formulas">4 formules</div>
+  <div class="bloc-title">Solutions stériles — Réhydratation</div>
+  <div class="bloc-count">3 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Décoction saule blanc</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Écorce saule blanc 5g / 250mL eau</div>
-  <div class="f-label">Procédé</div><div class="f-row">Faire bouillir 20 min, filtrer, refroidir</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 tasse 3×/j · Douleurs légères à modérées · CI : aspirine</div>
-  <span class="f-badge">Pharmacognosy Rev 2015</span>
-</div><div class="formula-card">
-  <h4>Infusion reine-des-prés</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sommités 2g / 250mL eau frémissante</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser 10 min couvert (volatile), filtrer</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">2 tasses/j · Fièvre, douleurs rhumatismales · CI: allergie ASA</div>
-  <span class="f-badge">Fitoterapia 2013</span>
-</div><div class="formula-card">
-  <h4>Pommade arnica-menthe</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Huile d'arnica 50mL + huile essentielle de menthe 2mL + cire 5g</div>
-  <div class="f-label">Procédé</div><div class="f-row">Fondre cire, incorporer huile et huile essentielle à 40°C, couler</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Douleurs musculaires, bleus. 3×/j, éviter plaies ouvertes.</div>
-  <span class="f-badge">Phytomedicine 2012</span>
-</div><div class="formula-card">
-  <h4>Sirop antidouleur composite</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Thym 50g + Miel 200g + Citron 30mL + Gingembre 20g</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction thym 10 min, filtrer, ajouter miel hors feu</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 càs 3×/j. Antalgique + expectorant + anti-inflammatoire.</div>
-  <span class="f-badge">Ethnopharmacol 2018</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Sérum physiologique NaCl 0,9 %</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Solution saline stérile pour nettoyer les plaies, rincer les yeux, reconstituer des médicaments en poudre, perfusion en urgence. Recette : 9 g de sel dans 1 litre d'eau. C'est tout.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row"><strong>Chlorure de sodium pur (NaCl)</strong> — sel de cuisine sans additifs, ou sel de laboratoire, 9 g par litre<br><strong>Eau distillée</strong> — ou eau bouillie 20 min pour usage externe uniquement</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">
+    1. Dissoudre 9 g de sel dans 1 L d'eau distillée. Agiter jusqu'à dissolution complète.<br>
+    2. <strong>Pour usage stérile (plaies internes, yeux) :</strong><br>
+    — Option A : filtrer sur membrane 0,22 µm (filtre seringue, 1–2 €/unité, Amazon/eBay) → tue bactéries et virus.<br>
+    — Option B : mettre en bocal fermé dans une cocotte-minute à pression maximale pendant 20 min (équivalent autoclave 121 °C).<br>
+    3. Mettre en flacon stérile fermé.
+  </div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row">Parfaitement limpide, sans particules. Conductimètre (mesure du sel) : ~17 mS/cm. Goût : légèrement salé, sans amertume ni goût de plastique.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">6 mois en flacon stérile fermé. 24 h après ouverture.</div>
+  <span class="f-badge"><a href="https://www.who.int/publications/i/item/9789241547925" target="_blank" rel="noopener">WHO Essential Medicines</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Solution de Réhydratation Orale — formule OMS exacte</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Le médicament qui a sauvé le plus de vies dans l'histoire. Remplace les électrolytes perdus lors de diarrhées, vomissements, déshydratations. L'OMS estime qu'il a divisé par 3 la mortalité infantile par diarrhée depuis 1980.</div>
+  <div class="f-label">Précurseurs (pour 1 litre)</div>
+  <div class="f-row">
+    <strong>Chlorure de sodium (NaCl, sel de table)</strong> — 2,6 g<br>
+    <strong>Chlorure de potassium (KCl)</strong> — 1,5 g — rayons sels de régime (« sel light ») ou pharmacies<br>
+    <strong>Citrate de sodium trihydraté</strong> — 2,9 g — ou bicarbonate de soude 2,5 g si pas disponible<br>
+    <strong>Glucose anhydre</strong> — 13,5 g — ou saccharose (sucre blanc) 27 g à la place<br>
+    <strong>Eau propre bouillie refroidie</strong> — 1 litre
+  </div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">Dissoudre tous les ingrédients dans 1 L d'eau bouillie refroidie. Agiter jusqu'à dissolution complète. Goût : légèrement salé-sucré. Utiliser dans les 24 h.</div>
+  <div class="f-label">Usage</div>
+  <div class="f-row">Adulte : 250 mL toutes les 15 min. Enfant : 5 mL/kg toutes les 15 min. Si vomissements : donner à la cuillère, 5 mL toutes les 5 min.</div>
+  <span class="f-badge"><a href="https://www.who.int/publications/i/item/9241546441" target="_blank" rel="noopener">WHO/UNICEF ORS 2006</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Collyre physiologique stérile</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Solution pour rincer les yeux — corps étrangers, produits chimiques, infections légères. Identique au sérum physiologique mais avec exigences de stérilité plus strictes.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row">Chlorure de sodium 0,9 g + eau distillée stérilisée 100 mL. Option améliorée : ajouter acide borique 1,5 g/100 mL (tampon légèrement acide, plus proche du pH des larmes, moins irritant).</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">Dissoudre. Filtrer obligatoirement sur membrane 0,22 µm (les yeux tolèrent zéro contamination). Mettre en pipette ou flacon compte-gouttes stérile. Usage unique après ouverture.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">6 mois fermé. À jeter 24 h après ouverture.</div>
+  <span class="f-badge"><a href="https://www.who.int/" target="_blank" rel="noopener">WHO Ophthalmic Preparations</a></span>
+</div>
+
+</div><!-- /bloc-body 03 -->
+
+<!-- ─── 04 ANESTHÉSIQUES LOCAUX ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">04</div>
-  <div class="bloc-title" data-fr="Respiratoire" data-en="Respiratory">Respiratoire</div>
-  <div class="bloc-count" data-fr="3 formules" data-en="3 formulas">3 formules</div>
+  <div class="bloc-title">Anesthésiques locaux</div>
+  <div class="bloc-count">2 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Sirop expectorant thym-miel</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Thym frais 80g + Miel 200g + Eau 300mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction thym 15 min, filtrer, ajouter miel à <40°C</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 càs 4×/j. Bronchite, toux productive.</div>
-  <span class="f-badge">Arzneimittelforschung 2006</span>
-</div><div class="formula-card">
-  <h4>Inhalation décongestionnante</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Eucalyptus 5g + Thym 3g + 1L eau bouillante</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser 5 min, inhaler sous serviette 10 min</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">2×/j. Sinusite, congestion. CI : asthme (HE pures).</div>
-  <span class="f-badge">Phytother Res 2009</span>
-</div><div class="formula-card">
-  <h4>Cataplasme moutarde (bronchite)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Farine moutarde 50g + Eau tiède 100mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger, étaler sur tissu, appliquer sur thorax</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">15–20 min max. CI : peau sensible, enfants <6 ans.</div>
-  <span class="f-badge">Botanical Medicine</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Benzocaïne gel 20 % (anesthésique topique)</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Anesthésique local qui engourdit la surface de la peau ou des muqueuses (l'intérieur de la bouche, etc.) pendant 20 à 40 minutes. Utilisé en dentisterie, pour les aphtes, les brûlures légères, les hémorroïdes. Effet uniquement en surface — ne pénètre pas les tissus profonds.</div>
+  <div class="f-label">Précurseurs (pour 100 g de gel)</div>
+  <div class="f-row"><strong>Benzocaïne en poudre</strong> (20 g) — légale, Amazon, eBay, fournisseurs cosmétiques. Aussi utilisée en maquillage comme anesthésiant léger. 10–30 €/100 g.<br><strong>Éthanol 95 %</strong> (20 mL, solvant pour dissoudre la benzocaïne)<br><strong>Base gel neutre</strong> (80 g) — carbomère (gel transparent, pharmacies/eBay), ou vaseline blanche, ou gel d'aloe vera neutre</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">
+    1. Peser 20 g de benzocaïne en poudre.<br>
+    2. La dissoudre dans 20 mL d'éthanol 95 % en agitant (la benzocaïne ne se dissout pas dans l'eau).<br>
+    3. Incorporer progressivement ce mélange dans 80 g de gel neutre en malaxant vigoureusement.<br>
+    4. L'alcool s'évapore partiellement — normal.<br>
+    5. Homogénéiser jusqu'à texture uniforme, sans grumeaux blancs visibles.<br>
+    6. Mettre en pot ou tube.
+  </div>
+  <div class="f-label">Contrôle qualité</div>
+  <div class="f-row">Test sur dos de la main : appliquer une noisette, attendre 3 minutes → sensation d'engourdissement = produit actif. Texture : gel homogène sans grains.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">12 mois au frais, à l'abri de la lumière.</div>
+  <span class="f-badge"><a href="https://www.usp.org/" target="_blank" rel="noopener">USP — Benzocaine monograph</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Lidocaïne topique reconcentrée depuis OTC</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">La lidocaïne est l'anesthésique local le plus utilisé en médecine. Les anesthésiques dentaires OTC (Xylocaïne spray, Dynexan gel, etc.) contiennent 2–10 % de lidocaïne. On peut concentrer et reformuler cette lidocaïne pour obtenir des préparations plus efficaces.</div>
+  <div class="f-label">Méthode 1 — Reformulation directe</div>
+  <div class="f-row">Utiliser un gel lidocaïne 2 % du commerce comme base. Pour augmenter la concentration à 5 % : ajouter 3 g de lidocaïne base (disponible chez fournisseurs chimie, légale) pour 100 g de gel commercial. Mélanger à fond.</div>
+  <div class="f-label">Méthode 2 — Depuis poudre</div>
+  <div class="f-row"><strong>Lidocaïne base</strong> (poudre blanche) — légale en France, Sigma-Aldrich, TCI, 30–80 €/25 g. Dissoudre dans acide chlorhydrique dilué pour obtenir lidocaïne chlorhydrate (plus soluble dans l'eau). Incorporer dans gel carbomère neutre.</div>
+  <div class="f-label">Usage</div>
+  <div class="f-row">Anesthésie cutanée avant suture, soins dentaires de terrain, douleurs sur muqueuses. Effet en 5–10 min, durée 45–90 min selon concentration.</div>
+  <div class="f-label">Attention</div>
+  <div class="f-row">Ne pas avaler de grandes quantités — toxique par voie orale à forte dose. Ne pas injecter — la forme injectable nécessite une stérilité et un pH contrôlé que le labo DIY ne peut pas garantir.</div>
+  <span class="f-badge"><a href="https://pubmed.ncbi.nlm.nih.gov/1563234/" target="_blank" rel="noopener">Strichartz 1987 — Lidocaine mechanisms</a></span>
+</div>
+
+</div><!-- /bloc-body 04 -->
+
+<!-- ─── 05 ANTIBIOTIQUES DE TERRAIN ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">05</div>
-  <div class="bloc-title" data-fr="Digestif" data-en="Digestive">Digestif</div>
-  <div class="bloc-count" data-fr="4 formules" data-en="4 formulas">4 formules</div>
+  <div class="bloc-title">Antibiotiques de terrain</div>
+  <div class="bloc-count">2 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4><span data-gloss="charbon-active" style="border-bottom:1px dashed var(--accent);cursor:pointer;">charbon activé</span> urgence</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Charbon végétal activé 1–2g/verre eau</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger vigoureusement, boire immédiatement</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1–2g/kg dès ingestion toxique. CI: caustiques, alcools.</div>
-  <span class="f-badge">Clin Toxicol 2005</span>
-</div><div class="formula-card">
-  <h4>Tisane antispasmodique</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Camomille 2g + Mélisse 2g + Menthe 1g / 250mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser 10 min couvert, filtrer</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">3 tasses/j entre repas. Colopathie, crampes digestives.</div>
-  <span class="f-badge">Phytomedicine 2014</span>
-</div><div class="formula-card">
-  <h4>Argile verte (gastro)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Argile verte illite 1 càc / verre eau froide</div>
-  <div class="f-label">Procédé</div><div class="f-row">Laisser reposer 30 min, boire eau +argile en suspension</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">3×/j à distance des médicaments. Gastro-entérite, diarrhées.</div>
-  <span class="f-badge">Argil. Therapeut.</span>
-</div><div class="formula-card">
-  <h4>Décoction anti-diarrhéique</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Ronce 3g + Plantain 2g + Charbon 0,5g / 300mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction 15 min, filtrer, ajouter charbon refroidi</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Boire 500mL/j en 3 fois. Diarrhée bactérienne légère.</div>
-  <span class="f-badge">Ethnopharmacol 2020</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Reconditionnement antibiotiques vétérinaires</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Les antibiotiques vétérinaires (amoxicilline, tétracycline, métronidazole) sont chimiquement identiques aux versions humaines. Dans de nombreux pays sans accès médical, c'est la seule source disponible. Légal à acheter, légal à reconvertir pour usage humain dans la plupart des juridictions européennes si pas de prescription requise.</div>
+  <div class="f-label">Produits concernés</div>
+  <div class="f-row">
+    <strong>Amoxicilline vétérinaire 500 mg</strong> — même molécule qu'Amoxil humain. Disponible dans les coopératives agricoles, vétérinaires, en ligne (pays voisins si besoin).<br>
+    <strong>Métronidazole vétérinaire 250–500 mg</strong> — même que Flagyl. Amibes, anaérobies, infections digestives.<br>
+    <strong>Tétracycline vétérinaire 250 mg</strong> — large spectre, infections respiratoires, cutanées.
+  </div>
+  <div class="f-label">Vérification avant usage</div>
+  <div class="f-row">
+    1. Vérifier la DCI (nom de la molécule) — identique à la version humaine.<br>
+    2. Vérifier le dosage en mg/comprimé — même dose que prescrit pour humain.<br>
+    3. Vérifier la date de péremption — les antibiotiques périmés peuvent être inactifs ou dans de rares cas toxiques (tétracycline).<br>
+    4. Inspecter l'aspect : pas de coloration anormale, pas d'odeur inhabituelle.
+  </div>
+  <div class="f-label">Reconditionner</div>
+  <div class="f-row">Transférer dans des gélules opaques étiquetées si le conditionnement vétérinaire est en vrac. Indiquer : molécule, dosage, date de fabrication, date de péremption, lot.</div>
+  <div class="f-label">Usage responsable</div>
+  <div class="f-row">Toujours finir un traitement antibiotique (7–14 jours selon molécule). Arrêter trop tôt = résistance bactérienne. Un antibiogramme (culture de la bactérie pour identifier le bon antibiotique) reste la référence si accessible.</div>
+  <span class="f-badge"><a href="https://www.who.int/publications/i/item/9789241550031" target="_blank" rel="noopener">WHO AWaRe — Antibiotics list</a></span>
+</div>
+
+<div class="formula-card">
+  <h4>Pommade soufre anti-gale (synthèse simple)</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">La gale est une infection de peau par un acarien (Sarcoptes scabiei). La pommade soufre à 10 % est le traitement de première ligne recommandé par l'OMS dans les pays à ressources limitées — efficace, pas cher, deux précurseurs.</div>
+  <div class="f-label">Précurseurs (pour 100 g)</div>
+  <div class="f-row"><strong>Soufre en poudre sublimé (fleur de soufre)</strong> — 10 g — jardineries (fongicide naturel), pharmacies vrac, 2–5 €/kg<br><strong>Vaseline blanche</strong> — 90 g — pharmacies</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">Faire tiédir légèrement la vaseline (pas fondre — juste ramollir). Incorporer le soufre en poudre petit à petit en mélangeant vigoureusement. Homogénéiser jusqu'à pommade jaune uniforme sans grumeaux.</div>
+  <div class="f-label">Usage</div>
+  <div class="f-row">Appliquer sur tout le corps (sauf visage et muqueuses) le soir, laisser une nuit, rincer le matin. Répéter 3 nuits consécutives. Laver draps et vêtements à 60 °C entre chaque application.</div>
+  <span class="f-badge"><a href="https://www.who.int/publications/i/item/9789241547925" target="_blank" rel="noopener">WHO EML — Scabies protocol</a></span>
+</div>
+
+</div><!-- /bloc-body 05 -->
+
+<!-- ─── 06 GALÉNIQUE DIY ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">06</div>
-  <div class="bloc-title" data-fr="Cicatrisation" data-en="Wound healing">Cicatrisation</div>
-  <div class="bloc-count" data-fr="4 formules" data-en="4 formulas">4 formules</div>
+  <div class="bloc-title">Galénique — Mise en forme</div>
+  <div class="bloc-count">3 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Pommade calendula</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Fleurs calendula 100g + Huile olive 300mL + Cire 30g</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macération huile 4 sem. ou bain-marie 2h. Ajouter cire fondue.</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Plaies superficielles, gerçures, eczéma. 2×/j.</div>
-  <span class="f-badge">J Wound Care 2013</span>
-</div><div class="formula-card">
-  <h4>Gel aloe vera</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Gel frais feuille aloe + Vitamine E (1 caps)</div>
-  <div class="f-label">Procédé</div><div class="f-row">Extraire gel à la cuillère, mixer, ajouter vit. E</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Brûlures 1er/2e degré, coups de soleil, plaies. 3×/j.</div>
-  <span class="f-badge">Burns 2007</span>
-</div><div class="formula-card">
-  <h4>Pansement au miel</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Miel brut (Manuka UMF10+ ou miel local brut)</div>
-  <div class="f-label">Procédé</div><div class="f-row">Appliquer directement couche 2–3mm sur plaie</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Plaies infectées, ulcères. Changer 1×/j.</div>
-  <span class="f-badge">J Clin Nursing 2008</span>
-</div><div class="formula-card">
-  <h4>Huile de millepertuis</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sommités fleuries 100g + Huile olive 300mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macération solaire 30 jours (bocal fermé au soleil)</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Névrites, douleurs nerveuses, hémorroïdes. Usage externe.</div>
-  <span class="f-badge">Phytomedicine 2000</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Capsulage manuel</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Mettre une poudre (paracétamol, charbon activé, etc.) en gélules dosées précisément. La mise en forme est souvent aussi importante que la synthèse — une poudre libre est difficile à doser et à avaler.</div>
+  <div class="f-label">Matériel</div>
+  <div class="f-row"><strong>Gélules vides taille 0</strong> (500–600 mg de capacité) — Amazon, eBay, herboristeries, 5–10 €/100 unités. Taille 1 (400 mg), taille 2 (300 mg) aussi disponibles.<br><strong>Machine à gélules manuelle</strong> (plaque de remplissage 24 ou 100 trous) — 5–20 € sur Amazon. Pas indispensable mais multiplie la vitesse par 20.<br><strong>Balance précise ±0,01 g</strong> — obligatoire pour les médicaments.</div>
+  <div class="f-label">Procédé sans machine</div>
+  <div class="f-row">
+    1. Peser la dose souhaitée (ex : 500 mg de paracétamol).<br>
+    2. Séparer la gélule (corps + capuchon).<br>
+    3. Remplir le corps de gélule avec la poudre — tasser légèrement avec un crayon.<br>
+    4. Refermer avec le capuchon. Un clic indique la fermeture correcte.<br>
+    5. Vérifier le poids total de la gélule remplie (tarer d'abord une gélule vide).
+  </div>
+  <div class="f-label">Étiquetage obligatoire</div>
+  <div class="f-row">Toujours indiquer sur le flacon : molécule, dosage par gélule, date de fabrication, lot, date de péremption du produit.</div>
+</div>
+
+<div class="formula-card">
+  <h4>Suppositoires DIY</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Forme pharmaceutique utile quand le patient vomit (médicament absorbé par voie rectale au lieu d'orale). Aussi plus efficace pour certaines molécules comme le paracétamol chez l'enfant.</div>
+  <div class="f-label">Précurseurs</div>
+  <div class="f-row"><strong>Beurre de cacao ou Witepsol</strong> (excipient qui fond à 37 °C = température du corps) — magasins bio, pharmacies, 5–15 €/kg<br><strong>Molécule active</strong> (paracétamol en poudre, par exemple) en dose calculée</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">
+    1. Faire fondre 9 g de beurre de cacao au bain-marie à 40 °C (ne pas surchauffer).<br>
+    2. Hors feu, incorporer 1 g de paracétamol en poudre (soit 10 % = 500 mg dans un suppositoire de 5 g). Mélanger rapidement.<br>
+    3. Couler dans des moules à suppositoires (plastique souple, Amazon, 5–10 €) ou dans du papier aluminium roulé en tube.<br>
+    4. Laisser refroidir au réfrigérateur 1 h avant démoulage.
+  </div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">Au réfrigérateur (le beurre de cacao fond à température ambiante en été).</div>
+</div>
+
+<div class="formula-card">
+  <h4>Sirop base — excipient universel</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Une base sirupeuse neutre dans laquelle incorporer n'importe quelle molécule active hydrosoluble (paracétamol dissous, charbon, etc.). Utile pour les enfants qui ne savent pas avaler des gélules.</div>
+  <div class="f-label">Précurseurs (pour 100 mL)</div>
+  <div class="f-row">Saccharose (sucre blanc) — 65 g / Eau distillée — 35 mL / Conservateur : glycérine végétale 5 mL ou acide citrique 0,1 g</div>
+  <div class="f-label">Procédé</div>
+  <div class="f-row">Chauffer eau et sucre à 70 °C jusqu'à dissolution complète. Laisser refroidir. Ajouter glycérine. La molécule active est ajoutée froide, dissoute séparément si besoin dans un minimum d'eau.</div>
+  <div class="f-label">Conservation</div>
+  <div class="f-row">3 mois au réfrigérateur. Le sucre agit comme conservateur naturel.</div>
+</div>
+
+</div><!-- /bloc-body 06 -->
+
+<!-- ─── 07 CONTRÔLE QUALITÉ ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">07</div>
-  <div class="bloc-title" data-fr="Antifongique" data-en="Antifungal">Antifongique</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
+  <div class="bloc-title">Contrôle qualité — Vérifier ce qu'on produit</div>
+  <div class="bloc-count">3 techniques</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Solution antifongique pied</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Vinaigre cidre 200mL + Ail 4 gousses + huile essentielle de Tea tree (arbre à thé) 2%</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macérer ail 48h dans vinaigre, filtrer, ajouter HE</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Bain de pied 20 min 2×/j. Mycose interdigitale.</div>
-  <span class="f-badge">J Appl Microbiol 2007</span>
-</div><div class="formula-card">
-  <h4>Poudre antifongique</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Kaolin 50g + Bicarbonate 20g + Clou de girofle huile essentielle 1%</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger à sec, incorporer HE, tamiser</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Mycose cutanée sèche : appliquer 2×/j après nettoyage.</div>
-  <span class="f-badge">Braz J Microbiol 2011</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Chromatographie sur couche mince (TLC)</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">La TLC (chromatographie sur couche mince) est la technique la plus simple pour vérifier la pureté d'une molécule. Une plaque + une lampe UV + un solvant. C'est ce qui distingue un labo sérieux d'une cuisine. Coût : 5–10 € pour débuter.</div>
+  <div class="f-label">Matériel</div>
+  <div class="f-row">
+    <strong>Plaques TLC silice aluminium</strong> (60 F254) — Amazon, eBay, TCI, 10–20 €/25 plaques. Les plaques en plastique (5–8 €) suffisent pour un premier labo.<br>
+    <strong>Lampe UV 254 nm</strong> — 5–15 € sur Amazon. Révèle les molécules organiques qui absorbent les UV.<br>
+    <strong>Solvants d'élution</strong> : éthyl acétate + hexane (90/10 pour paracétamol) — fournisseurs chimie.<br>
+    <strong>Capillaire en verre</strong> (ou micropipette) pour déposer l'échantillon.
+  </div>
+  <div class="f-label">Procédé (vérification paracétamol)</div>
+  <div class="f-row">
+    1. Dissoudre une pincée de ton paracétamol dans 1 mL de méthanol. Faire pareil avec du paracétamol commercial (référence).<br>
+    2. Déposer une micro-goutte de chaque sur la plaque TLC à 1 cm du bas, espacées de 1 cm.<br>
+    3. Tremper le bas de la plaque dans le solvant (éthyl acétate / hexane 9:1) dans un bocal fermé.<br>
+    4. Laisser monter jusqu'à 1 cm du haut (~5 min). Sortir, sécher à l'air.<br>
+    5. Observer sous lampe UV 254 nm.<br>
+    <strong>Résultat attendu :</strong> ta tache doit être à la même hauteur que la référence commerciale (même Rf). Une tache supplémentaire = impureté.
+  </div>
+  <div class="f-label">Interprétation</div>
+  <div class="f-row">Rf = hauteur tache ÷ hauteur solvant. Paracétamol pur : Rf ≈ 0,45 dans éthyl acétate/hexane 9:1. Para-aminophénol (impureté) : Rf différent + réagit avec ninhydrine (spray révélateur).</div>
+</div>
+
+<div class="formula-card">
+  <h4>Tests colorimétriques rapides</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Des réactifs chimiques qui changent de couleur au contact d'une molécule spécifique. Moins précis que la TLC mais plus rapides — bon premier filtre avant la TLC.</div>
+  <div class="f-label">Réactifs essentiels</div>
+  <div class="f-row">
+    <strong>Chlorure ferrique (FeCl₃) 1 % en solution</strong> — détecte phénols (para-aminophénol, salicylate). Violet = présence. Incolore = absent. Indispensable pour vérifier paracétamol et aspirine.<br>
+    <strong>Réactif de Marquis</strong> (H₂SO₄ conc. + formaldéhyde) — détecte les alcaloïdes. Couleur selon molécule.<br>
+    <strong>Nitrate d'argent</strong> (AgNO₃) — détecte chlorures (vérifier NaCl dans sérum physio).<br>
+    <strong>Papier pH universel</strong> — pour toutes les solutions. Dakin : pH 8–9. Sérum physio : pH 5–7.
+  </div>
+  <div class="f-label">Préparation FeCl₃ 1 %</div>
+  <div class="f-row">Dissoudre 1 g de chlorure ferrique (FeCl₃, droguerie ou chimie, 2–5 €/100 g) dans 100 mL d'eau distillée. Conserver en flacon brun 12 mois.</div>
+</div>
+
+<div class="formula-card">
+  <h4>Mesures physiques — pH, degré alcool, densité</h4>
+  <div class="f-label">pH-mètre numérique</div>
+  <div class="f-row">10–20 € sur Amazon. Calibrer avant chaque série de mesures avec solutions tampon pH 4 et pH 7 (incluses). Mesurer pH de toutes les solutions — déviation de ±0,5 par rapport à la cible = à investiguer.</div>
+  <div class="f-label">Alcoomètre (pèse-alcool)</div>
+  <div class="f-row">5–10 € sur Amazon. Mesure le degré d'alcool par densité. Tremper dans la solution, lire la graduation à fleur de liquide. Indispensable pour vérifier alcool 70° et 95°.</div>
+  <div class="f-label">Réfractomètre</div>
+  <div class="f-row">15–30 €. Mesure la concentration en sucre (° Brix) ou en sel (% NaCl) selon le modèle. Utile pour vérifier SRO et solutions de glucose.</div>
+  <div class="f-label">Balance précise ±0,01 g</div>
+  <div class="f-row">15–40 €. Absolument obligatoire. Toutes les synthèses pharmaceutiques requièrent une pesée précise. Une erreur de dosage x10 peut transformer un analgésique en danger.</div>
+</div>
+
+</div><!-- /bloc-body 07 -->
+
+<!-- ─── 08 URGENCES TERRAIN ─── -->
+<div class="bloc-header" onclick="toggleBloc(this)">
   <div class="bloc-num">08</div>
-  <div class="bloc-title" data-fr="Antibiotique végétal" data-en="Plant-based antibiotics">Antibiotique végétal</div>
-  <div class="bloc-count" data-fr="3 formules" data-en="3 formulas">3 formules</div>
+  <div class="bloc-title">Urgences terrain — Réponse immédiate</div>
+  <div class="bloc-count">2 protocoles</div>
   <div class="bloc-arrow">›</div>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Teinture d'ail</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Ail broyé 100g + Alcool 70° 200mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macérer 2 semaines à l'obscurité, filtrer, presser</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">5–10 gouttes 3×/j dans eau. Infections resp., digestives.</div>
-  <span class="f-badge">J Antimicrob 2016</span>
-</div><div class="formula-card">
-  <h4>Extrait de propolis</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Propolis brute 20g + Alcool 70° 100mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macérer 2 semaines, filtrer sur café</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">10–20 gouttes 3×/j. Buccal, ORL, cutané.</div>
-  <span class="f-badge">Evid Complement Alt 2017</span>
-</div><div class="formula-card">
-  <h4>Préparation antibactérienne thym</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">huile essentielle thym 2mL + Huile olive 98mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger, agiter</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Application locale infections cutanées légères. 2×/j.</div>
-  <span class="f-badge">Food Chem Toxicol 2010</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">09</div>
-  <div class="bloc-title" data-fr="Sédatifs & Anxiolytiques" data-en="Sedatives & Anxiolytics">Sédatifs & Anxiolytiques</div>
-  <div class="bloc-count" data-fr="3 formules" data-en="3 formulas">3 formules</div>
-  <div class="bloc-arrow">›</div>
+<div class="bloc-body">
+
+<div class="formula-card">
+  <h4>Charbon activé urgence intoxication</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">Le charbon activé est une forme de carbone avec des millions de micropores qui absorbent les toxines dans l'estomac avant qu'elles passent dans le sang. C'est le traitement standard des urgences toxicologiques dans les pays sans centre anti-poison.</div>
+  <div class="f-label">Précurseurs — production DIY</div>
+  <div class="f-row">
+    <strong>Méthode 1 — Charbon de bois activé maison :</strong> Brûler du bois de coco ou de chêne en atmosphère réduite en oxygène (recouvrir le feu de terre humide). Le carbone obtenu est ensuite activé par chauffage vapeur à 800–900 °C ou traitement acide (HCl puis rinçage). Procédé complexe — voir sources.<br>
+    <strong>Méthode 2 — Achat vrac :</strong> Charbon végétal activé (coco ou bois) en poudre — 5–15 €/kg en ligne, magasins bio, grandes surfaces.
+  </div>
+  <div class="f-label">Usage urgence</div>
+  <div class="f-row">Dose adulte : 1 g/kg de poids corporel (soit 50–80 g pour un adulte moyen). Mélanger dans 250 mL d'eau, boire immédiatement. Peut être répété 1 h après. Délai critique : efficace si pris dans la première heure après ingestion.</div>
+  <div class="f-label">Contre-indications</div>
+  <div class="f-row">N'absorbe PAS : acides forts, bases fortes, alcools, cyanure, métaux lourds, fer. Ne pas donner si patient inconscient (risque fausse route).</div>
+  <span class="f-badge"><a href="https://pubmed.ncbi.nlm.nih.gov/15667136/" target="_blank" rel="noopener">Clin Toxicol 2005 — Activated charcoal</a></span>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Infusion valériane-mélisse</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Valériane 2g + Mélisse 2g / 250mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser 15 min couvert (arômes volatils), filtrer</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 tasse 30 min avant coucher. Insomnie légère.</div>
-  <span class="f-badge">Phytother Res 2006</span>
-</div><div class="formula-card">
-  <h4>Sirop passiflorée</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Passiflore 30g + Miel 150mL + Eau 300mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction 20 min, filtrer, ajouter miel hors feu</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 càs le soir. Anxiété, tension.</div>
-  <span class="f-badge">Phytomedicine 2011</span>
-</div><div class="formula-card">
-  <h4>Teinture aubépine</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sommités fleuries aubépine 50g + Alcool 40° 200mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macérer 4 semaines, filtrer</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">30 gouttes 2×/j. <span data-gloss="tachycardie" style="border-bottom:1px dashed var(--accent);cursor:pointer;">tachycardie</span> fonctionnelle, anxiété.</div>
-  <span class="f-badge">ESCOP Monographs</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">10</div>
-  <div class="bloc-title" data-fr="Cardio-vasculaire" data-en="Cardiovascular">Cardio-vasculaire</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
-  <div class="bloc-arrow">›</div>
+
+<div class="formula-card">
+  <h4>Eau de boisson — stérilisation d'urgence</h4>
+  <div class="f-label">C'est quoi</div>
+  <div class="f-row">En situation de crise (inondation, coupure réseau, déplacement), l'eau contaminée tue plus vite que le manque de médicaments. 3 méthodes selon les ressources disponibles.</div>
+  <div class="f-label">Méthode 1 — Ébullition</div>
+  <div class="f-row">Porter à ébullition 1 minute (3 minutes en altitude >2000 m). Tue 100 % des agents pathogènes biologiques (bactéries, virus, parasites). Ne traite pas les contaminants chimiques.</div>
+  <div class="f-label">Méthode 2 — Chloration (eau de Javel)</div>
+  <div class="f-row">2 gouttes d'eau de Javel 2,6 % par litre d'eau claire. Attendre 30 min. Pour eau trouble : filtrer d'abord sur tissu propre + 4 gouttes. Goût de chlore léger = normal et signe d'efficacité.</div>
+  <div class="f-label">Méthode 3 — Filtre céramique DIY</div>
+  <div class="f-row">Filtre gravitaire en deux seaux : seau supérieur avec filtre céramique (pores 0,2 µm, Amazon/eBay, 10–20 €) → élimine bactéries et parasites. À compléter avec chloration pour les virus.</div>
+  <span class="f-badge"><a href="https://www.who.int/water_sanitation_health/publications/2011/dwq_guidelines/en/" target="_blank" rel="noopener">WHO Water Quality Guidelines 2017</a></span>
 </div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Décoction aubépine (HTA légère)</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sommités fleuries 4g / 200mL eau</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction 10 min, 3 tasses/j pendant 6 semaines</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Hypertension légère, palpitations. CI : digoxine.</div>
-  <span class="f-badge">Cochrane 2008</span>
-</div><div class="formula-card">
-  <h4>Huile d'ail macérée</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Ail 50g + Huile olive 200mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Macérer ail tranché 1 semaine à l'abri</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 càc 2×/j. Circulation périphérique, HTA légère.</div>
-  <span class="f-badge">J Nutr 2016</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">11</div>
-  <div class="bloc-title" data-fr="Antiparasitaire" data-en="Antiparasitic">Antiparasitaire</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
-  <div class="bloc-arrow">›</div>
-</div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Protocole antiparasitaire</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Noix noire verte (teinture) + Absinthe poudre + Clou de girofle</div>
-  <div class="f-label">Procédé</div><div class="f-row">Noix noire: 20 gouttes/j J1-5. Absinthe: 300mg/j J1-14. Girofle: 500mg/j.</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Protocole terrain 3 semaines. CI grossesse.</div>
-  <span class="f-badge">Hulda Clark adapt.</span>
-</div><div class="formula-card">
-  <h4>Pommade anti-gale</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Soufre en poudre 10g + Vaseline 90g</div>
-  <div class="f-label">Procédé</div><div class="f-row">Mélanger soufre dans vaseline tiède</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Appliquer corps entier (sauf visage) soir pendant 3 j.</div>
-  <span class="f-badge">WHO Gale protocol</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">12</div>
-  <div class="bloc-title" data-fr="Vitamines & Renforcement" data-en="Vitamins & Immunity">Vitamines & Renforcement</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
-  <div class="bloc-arrow">›</div>
-</div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Sirop cynorrhodon-ortie</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Cynorrhodon 100g + Ortie 30g + Miel 150g / 500mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Décoction 20 min, filtrer, miel hors feu, stériliser</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1 càs 2×/j. Vitamine C naturelle + fer.</div>
-  <span class="f-badge">Phytother Res 2014</span>
-</div><div class="formula-card">
-  <h4>Infusion défenses immunitaires</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Échinacée 2g + Gingembre 1g + Citron / 250mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser échinacée 10 min, ajouter gingembre et citron</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">3 tasses/j les 10 premiers jours d'infection.</div>
-  <span class="f-badge">Cochrane 2015</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">13</div>
-  <div class="bloc-title" data-fr="Gynécologie" data-en="Gynecology">Gynécologie</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
-  <div class="bloc-arrow">›</div>
-</div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Antispasmodique utérin</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Feuilles framboisier 3g + Camomille 2g / 250mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Infuser 10 min, filtrer</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">2–3 tasses/j. Dysménorrhée légère, prévention contraction.</div>
-  <span class="f-badge">J Midwifery 2001</span>
-</div><div class="formula-card">
-  <h4>Collyre physiologique</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">chlorure de sodium (NaCl) 0,9g + Eau distillée stérilisée 100mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Dissoudre, filtrer 0,22μm ou ébullition 15 min, flacon stérile</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">Lavage oculaire. Usage unique. Conservation <24h.</div>
-  <span class="f-badge">WHO Ophthalm.</span>
-</div></div><div class="bloc-header" onclick="toggleBloc(this)">
-  <div class="bloc-num">14</div>
-  <div class="bloc-title" data-fr="Soins buccaux & ORL" data-en="Oral & ENT care">Soins buccaux & ORL</div>
-  <div class="bloc-count" data-fr="2 formules" data-en="2 formulas">2 formules</div>
-  <div class="bloc-arrow">›</div>
-</div>
-<div class="bloc-body"><div class="formula-card">
-  <h4>Bain de bouche antiseptique</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Sel 2g + Bicarbonate 1g + Eau chaude 200mL</div>
-  <div class="f-label">Procédé</div><div class="f-row">Dissoudre, gargariser 30s, cracher</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">4×/j. Aphtes, gingivite, angine légère.</div>
-  <span class="f-badge">J Oral Health 2019</span>
-</div><div class="formula-card">
-  <h4>Huile coco pulling</h4>
-  <div class="f-label">Ingrédients</div><div class="f-row">Huile de coco vierge 1 càs</div>
-  <div class="f-label">Procédé</div><div class="f-row">Faire tourner dans la bouche 15-20 min à jeun</div>
-  <div class="f-label">Dosage / Usage</div><div class="f-row">1×/j. Gingivite, blanchiment, halitose.</div>
-  <span class="f-badge">J Ayurveda 2017</span>
-</div></div></div>
-</div>
+
+</div><!-- /bloc-body 08 -->
+
+  </div><!-- /blocs container -->
+</div><!-- /page-wrap -->
 </div><!-- /v-preparer -->
 
 <!-- ══════════════ SOIGNER ══════════════ -->
