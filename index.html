@@ -67,7 +67,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-fo
 
 /* ── VIEWS ── */
 .view{display:none;}
-.view.active{display:block;animation:fin .4s ease forwards;}
+.view.active{display:block;}
 @keyframes fin{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── HOME ── */
@@ -279,7 +279,6 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
   .page-wrap{padding:70px 18px 60px;}
   .home-wrap{padding:0 18px;}
   .hdr-search{display:none;}
-  .view.active{animation:none;}
 }
 @media(max-width:480px){
   .dg{grid-template-columns:1fr;}
@@ -1600,7 +1599,7 @@ function playTransition(cardEl,label,onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.opacity='';T.world.removeAttribute('transform');riding=false;onArrive();},450);}})(t0);}
+    else{T.el.style.pointerEvents='none';onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.pointerEvents='';T.world.removeAttribute('transform');riding=false;},450);}})(t0);}
 
 function playTransitionBack(onArrive){
   if(riding)return;const T=getT();const W=innerWidth,H=innerHeight;
@@ -1621,7 +1620,7 @@ function playTransitionBack(onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.opacity='';T.world.removeAttribute('transform');riding=false;onArrive();},450);}})(t0);}
+    else{T.el.style.pointerEvents='none';onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.pointerEvents='';T.world.removeAttribute('transform');riding=false;},450);}})(t0);}
 
 /* ═══════ NAVIGATION ═══════ */
 let current='home';
