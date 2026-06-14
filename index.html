@@ -578,7 +578,7 @@ if(window.FIREBASE_READY){
   <footer>
     <div class="fi">
       <div class="flinks">
-        <a href="javascript:void(0)" onclick="openModal('modal-sources')">Sources scientifiques</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-sources')">Sources</a>
         <a href="javascript:void(0)" onclick="openModal('modal-legal')">Mentions légales</a>
         <a href="javascript:void(0)" onclick="openModal('modal-licence')">Licence ouverte</a>
       </div>
@@ -2582,22 +2582,78 @@ if('serviceWorker' in navigator){
 <div id="gloss-popover" style="display:none;" role="tooltip" aria-live="polite"></div>
 <div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
 
-<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--surface);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(640px,92vw);max-height:82vh;overflow-y:auto;background:var(--surface);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
   <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 16px;font-size:1.1rem;">Sources scientifiques</h3>
-  <p style="color:var(--ink-2);font-size:.88rem;line-height:1.6;margin:0 0 12px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables. Toutes les références sont citées dans les fiches correspondantes.</p>
-  <div style="display:flex;flex-direction:column;gap:8px;font-size:.83rem;">
-    <div><strong>Pharmacopées officielles</strong></div>
-    <a href="https://www.who.int/medicines/publications/pharmacopoeia/en/" target="_blank" rel="noopener" style="color:var(--accent);">WHO International Pharmacopoeia (2023)</a>
-    <a href="https://pharmacopee.ansm.sante.fr/" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Française — ANSM</a>
-    <a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Européenne 11e éd.</a>
-    <div style="margin-top:8px;"><strong>Guides cliniques OMS / MSF</strong></div>
-    <a href="https://www.who.int/publications/i/item/9789240052529" target="_blank" rel="noopener" style="color:var(--accent);">WHO Essential Medicines 2023</a>
-    <a href="https://medicalguidelines.msf.org/" target="_blank" rel="noopener" style="color:var(--accent);">MSF Clinical Guidelines</a>
-    <div style="margin-top:8px;"><strong>Urgences médicales</strong></div>
-    <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener" style="color:var(--accent);">ERC Resuscitation Guidelines 2021</a>
-    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed (NLM/NIH)</a>
-    <a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener" style="color:var(--accent);">Cochrane Library — revues systématiques</a>
+  <h3 style="margin:0 0 6px;font-size:1.1rem;">Sources</h3>
+  <p style="color:var(--ink-3);font-size:.82rem;line-height:1.5;margin:0 0 18px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables — articles ACL, pharmacopées officielles, guides OMS/MSF.</p>
+
+  <div style="display:flex;flex-direction:column;gap:14px;font-size:.8rem;line-height:1.6;">
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Synthèse pharmaceutique — Préparer</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Graham GG, et al. "The modern pharmacology of paracetamol." <em>Inflammopharmacology.</em> 2013;21(3):201–232. <a href="https://doi.org/10.1007/s10787-013-0172-x" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Conseil de l'Europe. <em>Pharmacopée Européenne</em>, 11e éd. EDQM, 2023. Monographies paracétamol (0129), ibuprofène (0721).</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· McDonnell G, Russell AD. "Antiseptics and disinfectants: activity, action, and resistance." <em>Clin Microbiol Rev.</em> 1999;12(1):147–179. <a href="https://doi.org/10.1128/cmr.12.1.147" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· OMS/UNICEF. <em>Reduced osmolarity ORS formulation.</em> WHO/FCH/CAH/01.22, 2001. <a href="https://iris.who.int/handle/10665/67322" target="_blank" rel="noopener" style="color:var(--accent);">iris.who.int</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Becker DE, Reed KL. "Essentials of local anesthetic pharmacology." <em>Anesth Prog.</em> 2006;53(3):98–109. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1693664/" target="_blank" rel="noopener" style="color:var(--accent);">PMC</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· OMS. <em>Model List of Essential Medicines</em>, 23e liste, 2023. <a href="https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02" target="_blank" rel="noopener" style="color:var(--accent);">who.int</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Adejare A, ed. <em>Remington: The Science and Practice of Pharmacy.</em> 22e éd. Pharmaceutical Press, 2012.</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Aulton ME, Taylor KMG. <em>Aulton's Pharmaceutics.</em> 5e éd. Elsevier, 2018.</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· ICH. <em>Q2(R1): Validation of Analytical Procedures.</em> 2005. <a href="https://database.ich.org/sites/default/files/Q2(R1)%20Guideline.pdf" target="_blank" rel="noopener" style="color:var(--accent);">ich.org</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· MSF. <em>Clinical Guidelines: Diagnosis and Treatment Manual.</em> 2019. <a href="https://medicalguidelines.msf.org" target="_blank" rel="noopener" style="color:var(--accent);">medicalguidelines.msf.org</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Arrêt cardiaque — Réanimation</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Panchal AR, et al. "2020 AHA Guidelines for CPR." <em>Circulation.</em> 2020;142(S2):S366–S468. <a href="https://doi.org/10.1161/CIR.0000000000000916" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Soar J, et al. "ERC Guidelines 2021: Adult advanced life support." <em>Resuscitation.</em> 2021;161:115–151. <a href="https://doi.org/10.1016/j.resuscitation.2021.02.010" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Hémorragies — Traumatismes — Choc</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Rossaint R, et al. "European guideline on management of major bleeding: sixth edition." <em>Crit Care.</em> 2023;27:80. <a href="https://doi.org/10.1186/s13054-023-04327-7" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· American College of Surgeons. <em>ATLS Student Course Manual.</em> 10e éd. ACS, 2018. ISBN 978-0-9968262-3-5.</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Roberts I, et al. "The CRASH-2 trial: tranexamic acid in bleeding trauma." <em>Health Technol Assess.</em> 2013;17(10):1–79. <a href="https://doi.org/10.3310/hta17100" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Evans L, et al. "Surviving Sepsis Campaign guidelines 2021." <em>Intensive Care Med.</em> 2021;47(11):1181–1247. <a href="https://doi.org/10.1007/s00134-021-06506-y" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Voies aériennes</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Higgs A, et al. "Guidelines for tracheal intubation in critically ill adults." <em>Br J Anaesth.</em> 2018;120(2):323–352. <a href="https://doi.org/10.1016/j.bja.2017.10.021" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Difficult Airway Society. "DAS Guidelines for unanticipated difficult intubation." <em>Anaesthesia.</em> 2015;70(11):1286–1301. <a href="https://doi.org/10.1111/anae.13233" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Neurologie — Infectieux</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Trinka E, et al. "A definition and classification of status epilepticus — ILAE." <em>Epilepsia.</em> 2015;56(10):1515–1523. <a href="https://doi.org/10.1111/epi.13121" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Brouwer MC, Tunkel AR, van de Beek D. "Epidemiology, diagnosis and treatment of acute bacterial meningitis." <em>Clin Microbiol Rev.</em> 2010;23(3):467–492. <a href="https://doi.org/10.1128/CMR.00070-09" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Laxminarayan R, et al. "Antibiotic resistance — the need for global solutions." <em>Lancet Infect Dis.</em> 2013;13(12):1057–1098. <a href="https://doi.org/10.1016/S1473-3099(13)70318-9" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Pulmonaire</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Mandell LA, et al. "IDSA/ATS Guidelines on Community-Acquired Pneumonia." <em>Clin Infect Dis.</em> 2007;44(S2):S27–72. <a href="https://doi.org/10.1086/511159" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· GOLD. <em>Global Strategy for COPD.</em> 2023 Report. <a href="https://goldcopd.org/2023-gold-report/" target="_blank" rel="noopener" style="color:var(--accent);">goldcopd.org</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Obstétrique — Digestif — Urinaire</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· OMS. <em>Recommendations for Prevention and Treatment of Postpartum Haemorrhage.</em> 2012. <a href="https://www.who.int/publications/i/item/9789241548502" target="_blank" rel="noopener" style="color:var(--accent);">who.int</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Duley L. "The global impact of pre-eclampsia and eclampsia." <em>Semin Perinatol.</em> 2009;33(3):130–137. <a href="https://doi.org/10.1053/j.semperi.2009.02.010" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· OMS. <em>Treatment of Diarrhoea: Manual for Physicians.</em> 4e rév. WHO/FCH/CAH/05.2, 2005.</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Gupta K, et al. "IDSA/ESCMID Guidelines for treatment of acute cystitis and pyelonephritis." <em>Clin Infect Dis.</em> 2011;52(5):e103–120. <a href="https://doi.org/10.1093/cid/ciq257" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+    </div>
+
+    <div>
+      <div style="font-weight:700;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Dentaire — Oculaire — Intoxications</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Segura-Egea JJ, et al. "Antibiotics in Endodontics: a review." <em>Int Endod J.</em> 2017;50(12):1169–1184. <a href="https://doi.org/10.1111/iej.12741" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Robertson D, Smith AJ. "The microbiology of the acute dental abscess." <em>J Med Microbiol.</em> 2009;58(Pt 2):155–162. <a href="https://doi.org/10.1099/jmm.0.003517-0" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Azari AA, Barney NP. "Conjunctivitis: systematic review of diagnosis and treatment." <em>JAMA.</em> 2013;310(16):1721–1730. <a href="https://doi.org/10.1001/jama.2013.280318" target="_blank" rel="noopener" style="color:var(--accent);">DOI</a></div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Kanski JJ, Bowling B. <em>Clinical Ophthalmology: A Systematic Approach.</em> 8e éd. Elsevier, 2015.</div>
+      <div style="color:var(--ink-2);margin-bottom:3px;">· Dart RC, ed. <em>Medical Toxicology.</em> 3e éd. Lippincott Williams &amp; Wilkins, 2004.</div>
+      <div style="color:var(--ink-2);">· OMS. <em>Poisoning Prevention and Management.</em> WHO/CED/PHE/EPE/20.04.3, 2020. <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener" style="color:var(--accent);">who.int</a></div>
+    </div>
+
   </div>
 </div>
 
