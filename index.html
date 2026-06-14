@@ -19,7 +19,7 @@
   --radius:16px; --display:'Schibsted Grotesk',system-ui,sans-serif; --body:'Hanken Grotesk',system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-html,body{height:100%;}
+html,body{height:100%;overflow-x:hidden;}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.5;}
 
 /* ── TRANSIT ── */
@@ -301,12 +301,18 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
 .uc-body .uc-src{font-size:10.5px;color:var(--ink-3);margin-top:10px;font-style:italic;}
 
 /* GLOSSAIRE */
-.gloss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px;}
-@media(max-width:640px){.gloss-grid{grid-template-columns:1fr;}}
-.gloss-entry{padding:14px 0;border-bottom:1px solid var(--line);}
+.vhdr{max-width:1080px;margin:0 auto;padding:88px 28px 24px;}
+.vhdr h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3.5vw,32px);letter-spacing:-.02em;margin-bottom:8px;}
+.vhdr-sub{font-size:14px;color:var(--ink-2);line-height:1.6;max-width:560px;}
+.gloss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px;max-width:1080px;margin:0 auto;padding:0 28px 80px;}
+@media(max-width:640px){.gloss-grid{grid-template-columns:1fr;padding:0 18px 60px;}.vhdr{padding:88px 18px 20px;}}
+.gloss-entry{padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;}
 .gloss-entry:last-child{border-bottom:none;}
-.gt{display:block;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.gd{font-size:.8rem;color:var(--ink-2);line-height:1.55;margin:0;}
+.gt{display:flex;align-items:center;justify-content:space-between;font-size:.88rem;font-weight:700;color:var(--ink);user-select:none;}
+.gt::after{content:'+';font-size:17px;font-weight:300;color:var(--ink-3);flex-shrink:0;transition:transform .2s;}
+.gloss-entry.open .gt::after{transform:rotate(45deg);color:var(--accent);}
+.gd{display:none;font-size:.8rem;color:var(--ink-2);line-height:1.55;margin:8px 0 4px;padding-right:24px;}
+.gloss-entry.open .gd{display:block;}
 
 /* ── GLOSSAIRE TERMS ── */
 [data-gloss]{border-bottom:1px dashed var(--accent);cursor:pointer;color:inherit;}
@@ -459,13 +465,13 @@ if(window.FIREBASE_READY){
 
 <!-- ── MOBILE NAV ── -->
 <nav class="mob-nav" id="mobNav">
-  <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'about','Qui sommes-nous')" data-fr="Qui sommes-nous" data-en="About us">Qui sommes-nous</a>
-  <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'labs','Réseau Labs')" data-fr="Réseau Labs" data-en="Network">Réseau Labs</a>
+  <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'rejoindre','Rejoindre')" data-fr="Rejoindre" data-en="Join">Rejoindre</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'contribuer','Contribuer')" data-fr="Contribuer" data-en="Contribute">Contribuer</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'contact','Contact')" data-fr="Contact" data-en="Contact">Contact</a>
+  <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
 </nav>
 
 <!-- ── HEADER ── -->
@@ -476,13 +482,13 @@ if(window.FIREBASE_READY){
   </div>
   <div class="hdr-right">
     <nav class="hdr-nav">
-      <a href="javascript:void(0)" onclick="goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
       <a href="javascript:void(0)" onclick="goSection(this,'about','Qui sommes-nous')" data-fr="Qui sommes-nous" data-en="About us">Qui sommes-nous</a>
-      <a href="javascript:void(0)" onclick="goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
       <a href="javascript:void(0)" onclick="goSection(this,'labs','Réseau Labs')" data-fr="Réseau Labs" data-en="Network">Réseau Labs</a>
+      <a href="javascript:void(0)" onclick="goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
       <a href="javascript:void(0)" onclick="goSection(this,'rejoindre','Rejoindre')" data-fr="Rejoindre" data-en="Join">Rejoindre</a>
       <a href="javascript:void(0)" onclick="goSection(this,'contribuer','Contribuer')" data-fr="Contribuer" data-en="Contribute">Contribuer</a>
       <a href="javascript:void(0)" onclick="goSection(this,'contact','Contact')" data-fr="Contact" data-en="Contact">Contact</a>
+      <a href="javascript:void(0)" onclick="goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
     </nav>
     <div class="hdr-search" id="hdrSearch">
       <input type="search" id="searchInput" placeholder="Rechercher…" autocomplete="off" oninput="handleSearch(this.value)" onsearch="handleSearch(this.value)" onblur="setTimeout(()=>{closeSearch()},200)" data-fr-placeholder="Rechercher…" data-en-placeholder="Search…">
@@ -556,11 +562,9 @@ if(window.FIREBASE_READY){
   <footer>
     <div class="fi">
       <div class="flinks">
-        <a href="javascript:void(0)" onclick="openModal('modal-sources')" data-fr="Sources scientifiques" data-en="Scientific sources">Sources scientifiques</a>
-        <a href="javascript:void(0)" onclick="openModal('modal-legal')" data-fr="Mentions légales" data-en="Legal">Mentions légales</a>
-        <a href="javascript:void(0)" onclick="triggerOfflineDownload()" data-fr="Télécharger hors-ligne" data-en="Download offline">Télécharger hors-ligne</a>
-        <a href="javascript:void(0)" onclick="openModal('modal-licence')" data-fr="Licence ouverte" data-en="Open licence">Licence ouverte</a>
-        <a href="javascript:void(0)" onclick="openModal('modal-presse')" data-fr="Presse" data-en="Press">Presse</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-sources')">Sources scientifiques</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-legal')">Mentions légales</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-licence')">Licence ouverte</a>
       </div>
     </div>
   </footer>
@@ -1536,30 +1540,33 @@ function proj(lat,lng){const d=devicePixelRatio||1,W=canvas.width/d,H=canvas.hei
 function drawGlobe(){
   const d=devicePixelRatio||1,W=canvas.width/d,H=canvas.height/d,cx=W/2,cy=H/2,R=Math.min(W,H)/2-18;
   ctx.clearRect(0,0,W,H);
-  const sph=ctx.createRadialGradient(cx-R*.28,cy-R*.28,0,cx,cy,R);
-  sph.addColorStop(0,'#ffffff');sph.addColorStop(.55,'#f2f6f2');sph.addColorStop(1,'#d8ede3');
-  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.fillStyle=sph;ctx.fill();
+  // Sphere background — propre, minimal
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.fillStyle='#f6f5f0';ctx.fill();
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.strokeStyle='rgba(13,143,98,.18)';ctx.lineWidth=1;ctx.stroke();
+  // Grille — très subtile
   for(let lat=-60;lat<=60;lat+=30){const pts=[];for(let lng=-180;lng<=180;lng+=5){const p=proj(lat,lng);if(p)pts.push(p);}
-    if(pts.length>2){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts)ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.07)';ctx.lineWidth=.8;ctx.stroke();}}
+    if(pts.length>2){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts)ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.06)';ctx.lineWidth=.6;ctx.stroke();}}
   for(let lng=-180;lng<=180;lng+=45){const pts=[];for(let lat=-80;lat<=80;lat+=5){const p=proj(lat,lng);if(p)pts.push(p);}
-    if(pts.length>2){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts)ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.07)';ctx.lineWidth=.8;ctx.stroke();}}
-    ctx.globalAlpha=.13;
-  for(const cont of CONTINENTS){const pts=cont.map(([la,ln])=>proj(la,ln)).filter(Boolean);if(pts.length<3)continue;ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts.slice(1))ctx.lineTo(p.x,p.y);ctx.closePath();ctx.fillStyle='#0d8f62';ctx.fill();}
-  ctx.globalAlpha=1;
+    if(pts.length>2){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts)ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.06)';ctx.lineWidth=.6;ctx.stroke();}}
+  // Continents — fill léger + contour net
+  for(const cont of CONTINENTS){const pts=cont.map(([la,ln])=>proj(la,ln)).filter(Boolean);if(pts.length<3)continue;
+    ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts.slice(1))ctx.lineTo(p.x,p.y);ctx.closePath();
+    ctx.fillStyle='rgba(13,143,98,.08)';ctx.fill();
+    ctx.strokeStyle='rgba(13,143,98,.40)';ctx.lineWidth=1;ctx.stroke();}
+  // Arcs entre labs
   for(const[i,j]of ARCS){const a=LABS[i],b=LABS[j],pts=[];
     for(let t=0;t<=20;t++){const p=proj(a[0]+(b[0]-a[0])*t/20,a[1]+(b[1]-a[1])*t/20);if(p)pts.push(p);}
-    if(pts.length>1){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts.slice(1))ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.18)';ctx.lineWidth=1;ctx.stroke();}}
+    if(pts.length>1){ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(const p of pts.slice(1))ctx.lineTo(p.x,p.y);ctx.strokeStyle='rgba(13,143,98,.16)';ctx.lineWidth=.8;ctx.stroke();}}
+  // Points labs
   pulseT+=.04;
   for(let i=0;i<LABS.length;i++){const p=proj(LABS[i][0],LABS[i][1]);if(!p)continue;
-    const alpha=.4+p.z*.6,r=2+p.z*2.5,pulse=(Math.sin(pulseT+i*.7)+1)/2;
-    ctx.beginPath();ctx.arc(p.x,p.y,r+3+pulse*4,0,Math.PI*2);ctx.fillStyle=`rgba(13,143,98,${alpha*.1})`;ctx.fill();
+    const alpha=.45+p.z*.55,r=1.8+p.z*2.2;
+    if(i===0){const pulse=(Math.sin(pulseT)+1)/2;
+      ctx.beginPath();ctx.arc(p.x,p.y,r+2+pulse*3.5,0,Math.PI*2);ctx.fillStyle='rgba(13,143,98,.1)';ctx.fill();}
     ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=`rgba(13,143,98,${alpha})`;ctx.fill();
-    ctx.beginPath();ctx.arc(p.x,p.y,r*.4,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${alpha*.9})`;ctx.fill();
-    if(i===0&&p.z>.1){ctx.font='bold 10px sans-serif';ctx.fillStyle='rgba(13,143,98,.9)';ctx.fillText('Montreuil',p.x+r+4,p.y+3);}
-    else if(p.z>.35){ctx.font='8.5px sans-serif';ctx.fillStyle='rgba(22,21,15,.45)';ctx.fillText(LABNAMES[i],p.x+r+3,p.y+3);}}
-  const edge=ctx.createRadialGradient(cx,cy,R*.72,cx,cy,R);edge.addColorStop(0,'rgba(10,110,76,0)');edge.addColorStop(1,'rgba(10,110,76,.06)');
-  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.fillStyle=edge;ctx.fill();
-  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);ctx.strokeStyle='rgba(13,143,98,.12)';ctx.lineWidth=1;ctx.stroke();
+    ctx.beginPath();ctx.arc(p.x,p.y,r*.38,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${alpha*.85})`;ctx.fill();
+    if(i===0&&p.z>.1){ctx.font='600 10px sans-serif';ctx.fillStyle='rgba(13,143,98,.95)';ctx.fillText('Montreuil',p.x+r+4,p.y+3.5);}
+    else if(p.z>.38){ctx.font='8.5px sans-serif';ctx.fillStyle=`rgba(22,21,15,${p.z*.5})`;ctx.fillText(LABNAMES[i],p.x+r+3,p.y+3);}}
   if(!dragging){velX*=.96;rotY+=velX*.002;if(Math.abs(velX)<.1)rotY+=.0025;}
   requestAnimationFrame(drawGlobe);}
 drawGlobe();
@@ -1628,7 +1635,9 @@ let current='home';
 function switchView(to){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('v-'+to).classList.add('active');
-  current=to;try{window.scrollTo({top:0,behavior:'instant'});}catch(e){window.scrollTo(0,0);}}
+  current=to;
+  if(to==='home')setTimeout(()=>rsz(),50);
+  try{window.scrollTo({top:0,behavior:'instant'});}catch(e){window.scrollTo(0,0);}}
 function goSection(cardEl,id,label){history.pushState({view:id},'');if(cardEl){playTransition(cardEl,label,()=>switchView(id));}else{switchView(id);}}
 function scrollTo2(id){var el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});document.querySelectorAll('#v-construire .sb-nav a').forEach(function(a){a.classList.remove('on');});var lnk=document.querySelector('#v-construire .sb-nav a[data-id="'+id+'"]');if(lnk)lnk.classList.add('on');}
 function goBack(){if(current==='home')return;playTransitionBack(()=>switchView('home'));}
@@ -1847,6 +1856,39 @@ function closeSearch(){
   document.getElementById('search-results').classList.remove('visible');
 }
 // ─── END SEARCH ────────────────────────────────
+
+// ── MODALES FOOTER ──
+function openModal(id){
+  var m=document.getElementById(id);
+  if(!m)return;
+  m.style.display='block';
+  document.getElementById('modal-overlay').style.display='block';
+}
+function closeModal(){
+  ['modal-sources','modal-legal','modal-licence','modal-presse'].forEach(function(id){
+    var m=document.getElementById(id);if(m)m.style.display='none';
+  });
+  document.getElementById('modal-overlay').style.display='none';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+// ── GLOSSAIRE FILTRE ──
+function filterGloss(q){
+  q=(q||'').toLowerCase().trim();
+  document.querySelectorAll('.gloss-entry').forEach(function(e){
+    var term=e.querySelector('.gt')?e.querySelector('.gt').textContent.toLowerCase():'';
+    var def=e.querySelector('.gd')?e.querySelector('.gd').textContent.toLowerCase():'';
+    e.style.display=(term.includes(q)||def.includes(q))?'':'none';
+  });
+}
+
+// ── GLOSSAIRE ACCORDION ──
+document.querySelectorAll('.gloss-entry').forEach(function(entry){
+  entry.addEventListener('click',function(e){
+    if(e.target.closest('a'))return;
+    this.classList.toggle('open');
+  });
+});
 
 
 // ─── LABS ────────────────────────────────────────
@@ -2395,7 +2437,7 @@ if('serviceWorker' in navigator){
 <div id="gloss-popover" style="display:none;" role="tooltip" aria-live="polite"></div>
 <div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
 
-<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--surface);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
   <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
   <h3 style="margin:0 0 16px;font-size:1.1rem;">Sources scientifiques</h3>
   <p style="color:var(--ink-2);font-size:.88rem;line-height:1.6;margin:0 0 12px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables. Toutes les références sont citées dans les fiches correspondantes.</p>
@@ -2414,7 +2456,7 @@ if('serviceWorker' in navigator){
   </div>
 </div>
 
-<div id="modal-legal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+<div id="modal-legal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:80vh;overflow-y:auto;background:var(--surface);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
   <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
   <h3 style="margin:0 0 16px;font-size:1.1rem;">Mentions légales</h3>
   <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
@@ -2426,7 +2468,7 @@ if('serviceWorker' in navigator){
   </div>
 </div>
 
-<div id="modal-licence" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+<div id="modal-licence" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,92vw);max-height:80vh;overflow-y:auto;background:var(--surface);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
   <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
   <h3 style="margin:0 0 4px;font-size:1.1rem;">Licence ouverte</h3>
   <p style="color:var(--accent);font-size:.85rem;margin:0 0 16px;font-weight:600;">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
@@ -2439,19 +2481,4 @@ if('serviceWorker' in navigator){
     <p>Selon les conditions suivantes :</p>
     <ul style="margin:0 0 12px;padding-left:18px;">
       <li><strong>Attribution</strong> — Vous devez créditer DIG PHARMA, fournir un lien vers la licence et indiquer si des modifications ont été apportées.</li>
-      <li><strong>Partage dans les mêmes conditions</strong> — Si vous remixez ou transformez le contenu, vous devez distribuer vos contributions sous la même licence CC BY-SA 4.0.</li>
-    </ul>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener" style="color:var(--accent);">Texte complet de la licence →</a>
-  </div>
-</div>
-
-<div id="modal-presse" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(480px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
-  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 16px;font-size:1.1rem;">Espace presse</h3>
-  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
-    <p>DIG PHARMA est un projet open-source documentant la production autonome de médicaments essentiels.</p>
-    <p>Pour toute demande journalistique, interview ou partenariat éditorial :</p>
-    <p><a href="mailto:presse@digpharma.org" style="color:var(--accent);font-weight:600;">presse@digpharma.org</a></p>
-    <p style="margin-top:16px;font-size:.78rem;color:var(--ink-3);">Nous répondons aux demandes sous 48h. Un kit presse (logos, screenshots, brief projet) est disponible sur demande.</p>
-  </div>
-</di
+      <li><strong>Partage dans les mêmes conditions</strong> — Si
