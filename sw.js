@@ -1,7 +1,5 @@
-const CACHE = 'digpharma-v1';
+const CACHE = 'digpharma-v2';
 const OFFLINE_FILES = [
-  '/',
-  '/index.html',
   '/manifest.json'
 ];
 
@@ -22,16 +20,18 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Network-first pour Firebase, cache-first pour tout le reste
-  if (e.request.url.includes('firebasejs') || e.request.url.includes('firestore')) {
-    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
-  } else {
+  const url = e.request.url;
+
+  // Network-first pour Firebase et pour index.html (toujours frais)
+  if (url.includes('firebasejs') || url.includes('firestore') ||
+      url.endsWith('/') || url.endsWith('/index.html')) {
     e.respondWith(
-      caches.match(e.request).then(cached => cached || fetch(e.request).then(resp => {
-        const clone = resp.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
-        return resp;
-      }))
+      fetch(e.request).catch(() => caches.match(e.request))
     );
+    return;
   }
-});
+
+  // Cache-first pour les assets statiques (SW, manifest, images)
+  e.respondWith(
+    caches.match(e.request).then(cached => cached || fetch(e.request).then(resp => {
+      const clone
