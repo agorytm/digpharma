@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -488,6 +488,11 @@ if(window.FIREBASE_READY){
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'contribuer','Contribuer')" data-fr="Contribuer" data-en="Contribute">Contribuer</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'contact','Contact')" data-fr="Contact" data-en="Contact">Contact</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
+  <hr class="mob-sep">
+  <div style="display:flex;gap:8px;padding:10px 0;">
+    <button class="lang-btn" data-l="fr" onclick="closeMobNav();switchLang('fr')" style="padding:6px 16px;border:1px solid var(--line);border-radius:6px;background:none;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--ink);">FR</button>
+    <button class="lang-btn on" data-l="en" onclick="closeMobNav();switchLang('en')" style="padding:6px 16px;border:1px solid var(--line);border-radius:6px;background:none;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--ink);">EN</button>
+  </div>
 </nav>
 
 <!-- ── HEADER ── -->
@@ -512,8 +517,8 @@ if(window.FIREBASE_READY){
       <div id="search-results"></div>
     </div>
     <div class="lang-sw">
-      <button class="lang-btn on" data-l="fr" onclick="switchLang('fr')">FR</button>
-      <button class="lang-btn" data-l="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-l="fr" onclick="switchLang('fr')">FR</button>
+      <button class="lang-btn on" data-l="en" onclick="switchLang('en')">EN</button>
     </div>
     <button class="hdr-menu" onclick="toggleMobNav()" aria-label="Menu">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#16150f" stroke-width="1.8" stroke-linecap="round">
@@ -1715,7 +1720,8 @@ function initHomeGlobe(){
   // Render
   (function render(){if(!dr){group.rotation.y+=vy;vy+=(0.0016-vy)*0.03;}renderer.render(scene,cam);requestAnimationFrame(render);})();
 }
-window.addEventListener('load',()=>{try{initHomeGlobe();}catch(e){console.error('Globe:',e);}});
+window.addEventListener('load',()=>{
+  switchLang('en');try{initHomeGlobe();}catch(e){console.error('Globe:',e);}});
 /* ═══════ TRANSIT ═══════ */
 let riding=false,_T=null;
 function getT(){
@@ -1817,7 +1823,7 @@ document.querySelector('#v-construire .page-wrap')?.addEventListener('scroll',up
 window.addEventListener('scroll',updateSbActive,{passive:true});
 
 /* ═══════ LANGUAGE ═══════ */
-let lang='fr';
+let lang='en';
 function switchLang(l){
   lang=l;
   document.querySelectorAll('[data-fr]').forEach(el=>{
