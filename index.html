@@ -1599,7 +1599,7 @@ function playTransition(cardEl,label,onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},440);}})(t0);}
+    else{onArrive();requestAnimationFrame(()=>{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},450);});}})(t0);}
 
 function playTransitionBack(onArrive){
   if(riding)return;const T=getT();const W=innerWidth,H=innerHeight;
@@ -1620,7 +1620,7 @@ function playTransitionBack(onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},440);}})(t0);}
+    else{onArrive();requestAnimationFrame(()=>{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},450);});}})(t0);}
 
 /* ═══════ NAVIGATION ═══════ */
 let current='home';
