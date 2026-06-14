@@ -1586,7 +1586,7 @@ function playTransition(cardEl,label,onArrive){
   const r=cardEl.getBoundingClientRect();const sx=r.left+r.width/2,sy=r.bottom-8;
   const dir=(sx>W*.6)?-1:1;const pts=buildRoute(sx,sy,dir);const dStr=roundedPath(pts,26);
   T.ghost.setAttribute('d',dStr);T.draw.setAttribute('d',dStr);
-  const L=T.draw.getTotalLength();if(!L){onArrive();return;}T.draw.style.strokeDasharray=L;T.draw.style.strokeDashoffset=L;
+  const L=T.draw.getTotalLength();if(!L){T.el.classList.remove('on','arrive');riding=false;onArrive();return;}T.draw.style.strokeDasharray=L;T.draw.style.strokeDashoffset=L;
   const end=pts[pts.length-1];T.start.setAttribute('transform',`translate(${sx} ${sy})`);
   T.dest.setAttribute('transform',`translate(${end[0]} ${end[1]})`);T.label.textContent=label;
   T.label.setAttribute('x',dir<0?-17:17);T.label.setAttribute('text-anchor',dir<0?'end':'start');
@@ -1600,13 +1600,13 @@ function playTransition(cardEl,label,onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},440);}})(t0);}
+    else{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.opacity='';T.world.removeAttribute('transform');riding=false;onArrive();},450);}})(t0);}
 
 function playTransitionBack(onArrive){
   if(riding)return;const T=getT();const W=innerWidth,H=innerHeight;
   const sx=W*.44,sy=H*.6,dir=1;const pts=buildRouteUp(sx,sy,dir);const dStr=roundedPath(pts,26);
   T.ghost.setAttribute('d',dStr);T.draw.setAttribute('d',dStr);
-  const L=T.draw.getTotalLength();if(!L){onArrive();return;}T.draw.style.strokeDasharray=L;T.draw.style.strokeDashoffset=L;
+  const L=T.draw.getTotalLength();if(!L){T.el.classList.remove('on','arrive');riding=false;onArrive();return;}T.draw.style.strokeDasharray=L;T.draw.style.strokeDashoffset=L;
   const end=pts[pts.length-1];T.start.setAttribute('transform',`translate(${sx} ${sy})`);
   T.dest.setAttribute('transform',`translate(${end[0]} ${end[1]})`);
   T.label.textContent=lang==='fr'?'Accueil':'Home';
@@ -1621,14 +1621,14 @@ function playTransitionBack(onArrive){
     T.world.setAttribute('transform',`translate(${e*(focusX-pt.x)} ${e*(focusY-pt.y)})`);
     if(e>.78)T.dest.style.opacity=Math.min(1,(e-.78)/.18);
     if(t<1){requestAnimationFrame(frame);}
-    else{onArrive();T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.world.removeAttribute('transform');riding=false;},440);}})(t0);}
+    else{T.el.classList.add('arrive');setTimeout(()=>{T.el.classList.remove('on','arrive');T.el.style.opacity='';T.world.removeAttribute('transform');riding=false;onArrive();},450);}})(t0);}
 
 /* ═══════ NAVIGATION ═══════ */
 let current='home';
 function switchView(to){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('v-'+to).classList.add('active');
-  current=to;window.scrollTo({top:0,behavior:'instant'});}
+  current=to;try{window.scrollTo({top:0,behavior:'instant'});}catch(e){window.scrollTo(0,0);}}
 function goSection(cardEl,id,label){history.pushState({view:id},'');if(cardEl){playTransition(cardEl,label,()=>switchView(id));}else{switchView(id);}}
 function scrollTo2(id){var el=document.getElementById(id);if(!el)return;window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});document.querySelectorAll('#v-construire .sb-nav a').forEach(function(a){a.classList.remove('on');});var lnk=document.querySelector('#v-construire .sb-nav a[data-id="'+id+'"]');if(lnk)lnk.classList.add('on');}
 function goBack(){if(current==='home')return;playTransitionBack(()=>switchView('home'));}
