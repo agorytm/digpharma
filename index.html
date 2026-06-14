@@ -300,11 +300,12 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
 .uc-body .uc-src{font-size:10.5px;color:var(--ink-3);margin-top:10px;font-style:italic;}
 
 /* GLOSSAIRE */
-.gloss-grid{display:flex;flex-direction:column;gap:0;}
-.gloss-entry{padding:16px 0;border-bottom:1px solid var(--line);}
+.gloss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 24px;}
+@media(max-width:640px){.gloss-grid{grid-template-columns:1fr;}}
+.gloss-entry{padding:14px 0;border-bottom:1px solid var(--line);}
 .gloss-entry:last-child{border-bottom:none;}
-.gt{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;}
-.gd{font-size:13px;color:var(--ink-2);line-height:1.6;margin:0;}
+.gt{display:block;font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.gd{font-size:.8rem;color:var(--ink-2);line-height:1.55;margin:0;}
 
 /* ── GLOSSAIRE TERMS ── */
 [data-gloss]{border-bottom:1px dashed var(--accent);cursor:pointer;color:inherit;}
@@ -394,6 +395,22 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
 .log-product{font-weight:600;color:var(--ink);font-size:.9rem;}
 .log-detail{color:var(--ink-2);font-size:.8rem;margin-top:2px;}
 .log-lot{background:var(--line-2);border-radius:4px;padding:1px 6px;font-size:.72rem;color:var(--ink-3);margin-left:6px;}
+
+/* ── GLOSSAIRE POPOVER ── */
+#gloss-popover{
+  position:fixed;z-index:950;
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;
+  box-shadow:0 8px 28px rgba(0,0,0,.15);
+  max-width:300px;width:90vw;
+  animation:gpop .12s ease;
+  pointer-events:auto;
+}
+@keyframes gpop{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+#gloss-popover .gp-term{font-size:.85rem;font-weight:700;color:var(--ink);margin:0 0 6px;display:flex;align-items:center;justify-content:space-between;}
+#gloss-popover .gp-close{background:none;border:none;font-size:16px;cursor:pointer;color:var(--ink-3);padding:0;line-height:1;}
+#gloss-popover .gp-def{font-size:.8rem;color:var(--ink-2);line-height:1.55;margin:0;}
+#gloss-popover .gp-link{display:block;font-size:.74rem;color:var(--accent);margin-top:8px;cursor:pointer;text-decoration:none;}
 </style>
 
 <!-- ══ FIREBASE CONFIG — à remplir après création du projet ══ -->
@@ -548,6 +565,7 @@ if(window.FIREBASE_READY){
   </footer>
 
 <!-- ── MODALES FOOTER ── -->
+<div id="gloss-popover" style="display:none;" role="tooltip" aria-live="polite"></div>
 <div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
 
 <div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
@@ -1725,19 +1743,54 @@ document.querySelectorAll('.uc').forEach(function(c){
     if(!isOpen){this.classList.add('open');}
   });
 });
-// ── GLOSSAIRE TERMS ──
-document.addEventListener('click',function(e){
-  var el=e.target.closest('[data-gloss]');
-  if(!el)return;
-  e.stopPropagation();
-  var term=el.getAttribute('data-gloss');
+// ── GLOSSAIRE TERMS — popover ──
+var _gpActive=null;
+function closeGlossPopover(){
+  var p=document.getElementById('gloss-popover');
+  if(p)p.style.display='none';
+  _gpActive=null;
+}
+function goGlossEntry(term){
+  closeGlossPopover();
   history.pushState({view:'glossaire'},'');
   switchView('glossaire');
   setTimeout(function(){
     var a=document.getElementById('g-'+term);
     if(a)a.scrollIntoView({behavior:'smooth',block:'center'});
   },100);
+}
+document.addEventListener('click',function(e){
+  var pop=document.getElementById('gloss-popover');
+  if(pop&&pop.style.display!=='none'&&!pop.contains(e.target)&&!e.target.closest('[data-gloss]')){
+    closeGlossPopover();return;
+  }
+  var el=e.target.closest('[data-gloss]');
+  if(!el)return;
+  e.stopPropagation();
+  var term=el.getAttribute('data-gloss');
+  var entry=document.getElementById('g-'+term);
+  if(!entry)return;
+  var termEl=entry.querySelector('.gt');
+  var defEl=entry.querySelector('.gd');
+  if(!termEl||!defEl)return;
+  var tn=termEl.textContent,dn=defEl.textContent;
+  var lnk='<a class="gp-link" onclick="goGlossEntry(\x27'+term+'\x27)">Voir dans le glossaire &#x2192;</a>';
+  pop.innerHTML='<div class="gp-term">'+tn+'<button class="gp-close" onclick="closeGlossPopover()">&#x2715;</button></div>'
+    +'<p class="gp-def">'+dn+'</p>'+lnk;
+  var rect=el.getBoundingClientRect();
+  var vw=window.innerWidth,vh=window.innerHeight;
+  pop.style.display='block';pop.style.visibility='hidden';
+  var pw=Math.min(300,vw*0.9);
+  pop.style.maxWidth=pw+'px';
+  var top=rect.bottom+8,left=rect.left;
+  if(left+pw>vw-10)left=vw-pw-10;
+  if(left<10)left=10;
+  if(top+220>vh)top=rect.top-pop.offsetHeight-8;
+  if(top<8)top=8;
+  pop.style.left=left+'px';pop.style.top=top+'px';pop.style.visibility='visible';
+  _gpActive=term;
 });
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeGlossPopover();});
 
 // ─── SEARCH ENGINE ────────────────────────────────
 const SEARCH_INDEX = (function(){
@@ -2050,9 +2103,11 @@ function loadLabsFromFirestore(){
 <div id="v-glossaire" class="view">
   <div class="vhdr">
     <h2 data-fr="Glossaire" data-en="Glossary">Glossaire</h2>
-    <p class="vhdr-sub" data-fr="Termes médicaux et techniques utilisés dans DIG PHARMA." data-en="Medical and technical terms used in DIG PHARMA.">Termes médicaux et techniques utilisés dans DIG PHARMA.</p>
+    <p class="vhdr-sub" data-fr="Termes médicaux et techniques utilisés dans DIG PHARMA. Cliquez sur un terme souligné dans n&#x2019;importe quelle fiche pour voir sa définition." data-en="Medical and technical terms used in DIG PHARMA.">Termes médicaux et techniques utilisés dans DIG PHARMA.</p>
+    <input id="gloss-search" type="search" placeholder="Filtrer les termes…" oninput="filterGloss(this.value)"
+      style="width:100%;max-width:340px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-size:.88rem;background:var(--surface);color:var(--ink);margin-top:12px;outline:none;">
   </div>
-  <div class="gloss-grid">
+  <div class="gloss-grid" id="gloss-grid">
     <div class="gloss-entry" id="g-anaphylaxie"><span class="gt">Anaphylaxie</span><p class="gd">Réaction allergique sévère et soudaine. Le système immunitaire réagit de façon excessive à un allergène, provoquant chute de tension, gonflement des voies respiratoires et risque vital immédiat. Traitement : adrénaline intramusculaire.</p></div>
     <div class="gloss-entry" id="g-antibiotherapie"><span class="gt">Antibiothérapie</span><p class="gd">Traitement d'une infection bactérienne par des antibiotiques. Aucun effet sur les infections virales (rhume, grippe). Un traitement mal conduit (dose insuffisante, arrêt prématuré) favorise l'apparition de résistances bactériennes.</p></div>
     <div class="gloss-entry" id="g-antisepsie"><span class="gt">Antisepsie</span><p class="gd">Destruction des micro-organismes présents sur des tissus vivants (peau, muqueuses, plaie). A distinguer de la désinfection (surfaces inertes) et de la stérilisation (instruments : destruction totale).</p></div>
