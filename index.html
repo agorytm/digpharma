@@ -2042,11 +2042,11 @@ document.addEventListener('click',function(e){
 const LABS_DATA = {
   montreuil: {
     id: 'montreuil',
-    name: 'Montreuil — Agorytm',
+    name: 'Montreuil',
     city: 'Montreuil, Île-de-France, France',
     status: 'active',
     since: 'Juin 2025',
-    members: ['Agorytm', 'Contributeur·2'],
+    members: ['Contributeur·1', 'Contributeur·2'],
     completion: { installer:90, construire:80, sourcer:65, preparer:70, soigner:60 },
     stock: [
       {name:'Alcool éthylique 95°',category:'Antiseptique',qty:'4,2 L',target:'5 L',pct:84,status:'ok'},
@@ -2063,15 +2063,15 @@ const LABS_DATA = {
       {name:'Naloxone 0,4mg/mL',category:'Antidote',qty:'0 amp',target:'6 amp',pct:0,status:'miss'},
     ],
     log: [
-      {date:'12 juin 2026',product:'Alcool désinfectant 70°',lot:'LOT-2026-031',qty:'2 L',operator:'Agorytm'},
-      {date:'08 juin 2026',product:'Antiseptique végétal (thym/lavande)',lot:'LOT-2026-030',qty:'500 mL',operator:'Agorytm'},
+      {date:'12 juin 2026',product:'Alcool désinfectant 70°',lot:'LOT-2026-031',qty:'2 L',operator:'Lab Montreuil'},
+      {date:'08 juin 2026',product:'Antiseptique végétal (thym/lavande)',lot:'LOT-2026-030',qty:'500 mL',operator:'Lab Montreuil'},
       {date:'01 juin 2026',product:'Huile de millepertuis infusée',lot:'LOT-2026-029',qty:'250 mL',operator:'Contributeur·2'},
-      {date:'24 mai 2026',product:'Sirop expectorant (thym/miel)',lot:'LOT-2026-028',qty:'600 mL',operator:'Agorytm'},
+      {date:'24 mai 2026',product:'Sirop expectorant (thym/miel)',lot:'LOT-2026-028',qty:'600 mL',operator:'Lab Montreuil'},
       {date:'15 mai 2026',product:'Pommade cicatrisante (calendula)',lot:'LOT-2026-027',qty:'150 g',operator:'Contributeur·2'},
     ],
     messages: [
       {from:'Réseau DIG',text:'Bienvenue sur le réseau. Votre fiche laboratoire est maintenant visible.',time:'Juin 2025',mine:false},
-      {from:'Agorytm',text:'Merci ! On commence à documenter les premières préparations.',time:'Juin 2025',mine:true},
+      {from:'Lab Montreuil',text:'Merci ! On commence à documenter les premières préparations.',time:'Juin 2025',mine:true},
     ]
   }
 };
@@ -2297,7 +2297,7 @@ function loadLabsFromFirestore(){
     <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;gap:16px;align-items:flex-start;">
       <div style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:6px;"></div>
       <div>
-        <div style="font-weight:700;color:var(--ink);margin-bottom:4px;">Montreuil — Agorytm</div>
+        <div style="font-weight:700;color:var(--ink);margin-bottom:4px;">Montreuil</div>
         <div style="color:var(--ink-2);font-size:.9rem;line-height:1.6;">Premier laboratoire du réseau DIG PHARMA. Opérationnel depuis 2025. Contribue à la documentation et teste les protocoles en conditions réelles. Contact disponible via la page <a href="javascript:void(0)" onclick="goSection(null,'contact','Contact')" style="color:var(--accent);">Contact</a>.</div>
       </div>
     </div>
@@ -2447,7 +2447,7 @@ function loadLabsFromFirestore(){
     <div class="t">
       <div class="crumb">DIG PHARMA</div>
       <h1>Contact</h1>
-      <p>Laboratoire Montreuil · Agorytm</p>
+      <p>Laboratoire Montreuil</p>
     </div>
   </div>
 
@@ -2456,7 +2456,7 @@ function loadLabsFromFirestore(){
     <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:24px;">
       <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
         <div style="width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
-        <div style="font-weight:700;color:var(--ink);font-size:1rem;">Laboratoire Montreuil — Agorytm</div>
+        <div style="font-weight:700;color:var(--ink);font-size:1rem;">Laboratoire Montreuil</div>
         <div style="margin-left:auto;background:#dcfce7;color:#065f46;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:20px;">Actif</div>
       </div>
       <p style="color:var(--ink-2);font-size:.9rem;line-height:1.6;margin:0 0 16px;">Premier laboratoire du réseau DIG PHARMA. Point de contact principal pour les demandes d'information, de collaboration et d'enregistrement de nouveaux laboratoires.</p>
@@ -2519,7 +2519,7 @@ function loadLabsFromFirestore(){
     <div class="lab-card" onclick="openLabProfile('montreuil')">
       <div class="lab-card-head">
         <div class="lab-dot active"></div>
-        <div class="lab-name">Montreuil — Agorytm</div>
+        <div class="lab-name">Montreuil</div>
         <span class="lab-badge active">Actif</span>
       </div>
       <div class="lab-city">📍 Montreuil, Île-de-France, France</div>
