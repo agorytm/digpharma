@@ -67,7 +67,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-fo
 
 /* ── VIEWS ── */
 .view{display:none;}
-.view.active{display:block;animation:fin .4s ease;}
+.view.active{display:block;animation:fin .4s ease forwards;}
 @keyframes fin{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── HOME ── */
@@ -278,6 +278,8 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
   .inst-grid{grid-template-columns:1fr;}
   .page-wrap{padding:70px 18px 60px;}
   .home-wrap{padding:0 18px;}
+  .hdr-search{display:none;}
+  .view.active{animation:none;}
 }
 @media(max-width:480px){
   .dg{grid-template-columns:1fr;}

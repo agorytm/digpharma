@@ -1,4 +1,4 @@
-const CACHE = 'digpharma-v3';
+const CACHE = 'digpharma-v4';
 const OFFLINE_FILES = [
   '/manifest.json'
 ];
