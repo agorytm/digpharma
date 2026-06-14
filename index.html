@@ -293,6 +293,7 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
 .uc.open .uc-toggle::after{transform:rotate(45deg);color:var(--accent);}
 .uc-body{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
 .uc.open .uc-body{display:block;}
+.uc.open{grid-column:1/-1;}
 .uc-body ol{list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:6px;}
 .uc-body ol li{font-size:13px;color:var(--ink-2);line-height:1.5;}
 .uc-body .uc-note{font-size:12px;color:var(--ink-3);margin-top:10px;padding:8px 12px;background:var(--line-2);border-radius:8px;line-height:1.4;}
@@ -440,6 +441,7 @@ if(window.FIREBASE_READY){
 
 <!-- ── MOBILE NAV ── -->
 <nav class="mob-nav" id="mobNav">
+  <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'about','Qui sommes-nous')" data-fr="Qui sommes-nous" data-en="About us">Qui sommes-nous</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
   <a href="javascript:void(0)" onclick="closeMobNav();goSection(this,'labs','Réseau Labs')" data-fr="Réseau Labs" data-en="Network">Réseau Labs</a>
@@ -456,6 +458,7 @@ if(window.FIREBASE_READY){
   </div>
   <div class="hdr-right">
     <nav class="hdr-nav">
+      <a href="javascript:void(0)" onclick="goSection(this,'glossaire','Glossaire')" data-fr="Glossaire" data-en="Glossary">Glossaire</a>
       <a href="javascript:void(0)" onclick="goSection(this,'about','Qui sommes-nous')" data-fr="Qui sommes-nous" data-en="About us">Qui sommes-nous</a>
       <a href="javascript:void(0)" onclick="goSection(this,'faq','FAQ')" data-fr="FAQ" data-en="FAQ">FAQ</a>
       <a href="javascript:void(0)" onclick="goSection(this,'labs','Réseau Labs')" data-fr="Réseau Labs" data-en="Network">Réseau Labs</a>
@@ -535,14 +538,78 @@ if(window.FIREBASE_READY){
   <footer>
     <div class="fi">
       <div class="flinks">
-        <a href="javascript:void(0)" data-fr="Sources scientifiques" data-en="Scientific sources">Sources scientifiques</a>
-        <a href="javascript:void(0)" data-fr="Mentions légales" data-en="Legal">Mentions légales</a>
-        <a href="javascript:void(0)" data-fr="Télécharger hors-ligne" data-en="Download offline">Télécharger hors-ligne</a>
-        <a href="javascript:void(0)" data-fr="Licence ouverte" data-en="Open licence">Licence ouverte</a>
-        <a href="javascript:void(0)" data-fr="Presse" data-en="Press">Presse</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-sources')" data-fr="Sources scientifiques" data-en="Scientific sources">Sources scientifiques</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-legal')" data-fr="Mentions légales" data-en="Legal">Mentions légales</a>
+        <a href="javascript:void(0)" onclick="triggerOfflineDownload()" data-fr="Télécharger hors-ligne" data-en="Download offline">Télécharger hors-ligne</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-licence')" data-fr="Licence ouverte" data-en="Open licence">Licence ouverte</a>
+        <a href="javascript:void(0)" onclick="openModal('modal-presse')" data-fr="Presse" data-en="Press">Presse</a>
       </div>
     </div>
   </footer>
+
+<!-- ── MODALES FOOTER ── -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
+
+<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Sources scientifiques</h3>
+  <p style="color:var(--ink-2);font-size:.88rem;line-height:1.6;margin:0 0 12px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables. Toutes les références sont citées dans les fiches correspondantes.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;font-size:.83rem;">
+    <div><strong>Pharmacopées officielles</strong></div>
+    <a href="https://www.who.int/medicines/publications/pharmacopoeia/en/" target="_blank" rel="noopener" style="color:var(--accent);">WHO International Pharmacopoeia (2023)</a>
+    <a href="https://pharmacopee.ansm.sante.fr/" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Française — ANSM</a>
+    <a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Européenne 11e éd.</a>
+    <div style="margin-top:8px;"><strong>Guides cliniques OMS / MSF</strong></div>
+    <a href="https://www.who.int/publications/i/item/9789240052529" target="_blank" rel="noopener" style="color:var(--accent);">WHO Essential Medicines 2023</a>
+    <a href="https://medicalguidelines.msf.org/" target="_blank" rel="noopener" style="color:var(--accent);">MSF Clinical Guidelines</a>
+    <div style="margin-top:8px;"><strong>Urgences médicales</strong></div>
+    <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener" style="color:var(--accent);">ERC Resuscitation Guidelines 2021</a>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed (NLM/NIH)</a>
+    <a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener" style="color:var(--accent);">Cochrane Library — revues systématiques</a>
+  </div>
+</div>
+
+<div id="modal-legal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Mentions légales</h3>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p><strong>Éditeur</strong> : DIG PHARMA — projet open-source non commercial.<br>Contact : <a href="mailto:contact@digpharma.org" style="color:var(--accent);">contact@digpharma.org</a></p>
+    <p><strong>Hébergement</strong> : Vercel Inc., 340 Pine Street Suite 701, San Francisco, CA 94104, USA.</p>
+    <p><strong>Avertissement médical</strong> : Les informations publiées sur ce site sont fournies à titre documentaire et éducatif uniquement. Elles ne constituent pas un avis médical, un diagnostic ou une prescription. DIG PHARMA ne peut en aucun cas être tenu responsable de l'utilisation qui serait faite de ces informations. En situation d'urgence médicale, contactez les services de secours.</p>
+    <p><strong>Responsabilité</strong> : L'utilisateur est seul responsable de l'usage qu'il fait des protocoles décrits. La reproduction de médicaments en dehors d'un cadre réglementaire homologué peut être soumise à des contraintes légales selon le pays de résidence.</p>
+    <p><strong>Données personnelles</strong> : Ce site ne collecte aucune donnée personnelle. Aucun cookie de traçage n'est utilisé.</p>
+  </div>
+</div>
+
+<div id="modal-licence" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 4px;font-size:1.1rem;">Licence ouverte</h3>
+  <p style="color:var(--accent);font-size:.85rem;margin:0 0 16px;font-weight:600;">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p>Vous êtes libre de :</p>
+    <ul style="margin:0 0 12px;padding-left:18px;">
+      <li><strong>Partager</strong> — copier et redistribuer le contenu sur tout support ou format.</li>
+      <li><strong>Adapter</strong> — remixer, transformer et construire à partir du contenu pour toute utilisation, y compris commerciale.</li>
+    </ul>
+    <p>Selon les conditions suivantes :</p>
+    <ul style="margin:0 0 12px;padding-left:18px;">
+      <li><strong>Attribution</strong> — Vous devez créditer DIG PHARMA, fournir un lien vers la licence et indiquer si des modifications ont été apportées.</li>
+      <li><strong>Partage dans les mêmes conditions</strong> — Si vous remixez ou transformez le contenu, vous devez distribuer vos contributions sous la même licence CC BY-SA 4.0.</li>
+    </ul>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener" style="color:var(--accent);">Texte complet de la licence →</a>
+  </div>
+</div>
+
+<div id="modal-presse" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(480px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Espace presse</h3>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p>DIG PHARMA est un projet open-source documentant la production autonome de médicaments essentiels.</p>
+    <p>Pour toute demande journalistique, interview ou partenariat éditorial :</p>
+    <p><a href="mailto:presse@digpharma.org" style="color:var(--accent);font-weight:600;">presse@digpharma.org</a></p>
+    <p style="margin-top:16px;font-size:.78rem;color:var(--ink-3);">Nous répondons aux demandes sous 48h. Un kit presse (logos, screenshots, brief projet) est disponible sur demande.</p>
+  </div>
+</div>
 </div>
 </div><!-- /v-home -->
 
@@ -1438,6 +1505,10 @@ if(window.FIREBASE_READY){
     </div>
   </div>
 
+  <div style="background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.78rem;color:var(--ink-3);line-height:1.8;">
+    <span style="font-weight:600;color:var(--ink-2);">Abréviations utilisées dans les fiches : </span>
+    RCP = réanimation cardio-pulmonaire · DEA = défibrillateur externe automatisé · IV = intraveineux · IM = intramusculaire · SC = sous-cutané · IO = intra-osseux · PO = voie orale · SL = sublingual · PA = principe actif · FC = fréquence cardiaque · FR = fréquence respiratoire · TA = tension artérielle · SpO₂ = saturation en oxygène · SRO = solution de réhydratation orale · OMS = Organisation mondiale de la santé · MSF = Médecins Sans Frontières
+  </div>
   <div class="scat">Arrêt cardio-vasculaire</div>
   <div class="ug"><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Arrêt cardiaque</h4></div></div><p class="ua">RCP 30:2 · DEA si dispo · Adrénaline 1mg IV/IO toutes 3–5 min · Voie aérienne</p><div class="uc-body"><ol><li>Vérifie que la personne ne réagit pas : secoue l'épaule, appelle fort.</li><li>Appelle à l'aide — il faut au moins deux personnes.</li><li>Allonge sur le dos sur une surface dure.</li><li>Compressions thoraciques : talon de la main au centre de la poitrine, 5 à 6 cm de profondeur, 30 fois, à 2 par seconde.</li><li>Ouvre les voies aériennes : bascule la tête en arrière, soulève le menton.</li><li>2 insufflations bouche-à-bouche : pince le nez, souffle jusqu'à ce que la poitrine se soulève.</li><li>Répète 30/2 sans interruption. Relève toutes les 2 minutes.</li><li>DEA dès que disponible.</li></ol><p class="uc-note">RCP adulte — American Heart Association 2020. La fatigue arrive en 2 minutes : rotation des sauveteurs indispensable.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener">ERC Guidelines 2021</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33084003/" target="_blank" rel="noopener">AHA 2020 — JAMA</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4><span data-gloss="fibrillation" style="border-bottom:1px dashed var(--accent);cursor:pointer;">fibrillation ventriculaire</span></h4></div></div><p class="ua">Choc précordial sec · RCP immédiate · Adrénaline si DEA indisponible</p><div class="uc-body"><ol><li>Confirme absence de pouls et de conscience.</li><li>RCP immédiate : 30 compressions / 2 insufflations.</li><li><span data-gloss="defibrillateur" style="border-bottom:1px dashed var(--accent);cursor:pointer;">défibrillateur</span> disponible : électrode sous la clavicule droite, l'autre sur le flanc gauche.</li><li>Analyse le rythme. Si fibrillation confirmée : annonce « Choc — écartez-vous ».</li><li>Délivre le choc (200 J biphasique).</li><li>Reprends la RCP immédiatement, 2 minutes.</li><li>Réévalue toutes les 2 minutes. Persistance : second choc, puis adrénaline 1 mg IV.</li><li>Sans défibrillateur : RCP ininterrompue — seule option.</li></ol><p class="uc-note">Défibrillation dans les 3 premières minutes : chances de survie multipliées par 5.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener">ERC Guidelines 2021 — Defibrillation</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33773825/" target="_blank" rel="noopener">Resuscitation 2021</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev dif"><span class="sd"></span>Urgence différée</div><h4><span data-gloss="tachycardie" style="border-bottom:1px dashed var(--accent);cursor:pointer;">tachycardie</span> supraventriculaire</h4></div></div><p class="ua"><span data-gloss="valsalva" style="border-bottom:1px dashed var(--accent);cursor:pointer;">Valsalva</span> modifié · Immersion visage eau froide 15s · Massage sinus carotidien</p><div class="uc-body"><ol><li>Confirme : fréquence cardiaque supérieure à 150 battements/min, patient conscient, pouls présent.</li><li>Installe la personne assise et calme-la.</li><li><span data-gloss="valsalva" style="border-bottom:1px dashed var(--accent);cursor:pointer;">manœuvre de Valsalva</span> : souffler très fort dans un tube fermé pendant 15 secondes.</li><li>Si inefficace : plonger le visage dans de l'eau froide pendant 10 à 20 secondes (réflexe vagal).</li><li>Massage du sinus carotidien (formé uniquement) : côté droit du cou, 5 à 10 secondes.</li><li>Surveille la fréquence toutes les 5 minutes.</li><li>Perte de conscience ou chute de tension : traiter comme un choc.</li></ol><p class="uc-note">La TSV est rarement mortelle si le patient reste conscient. Les manœuvres vagales sont efficaces dans 20 à 25 % des cas.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://pubmed.ncbi.nlm.nih.gov/31504425/" target="_blank" rel="noopener">ESC Guidelines 2019</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/26099012/" target="_blank" rel="noopener">Cochrane — Valsalva</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev dif"><span class="sd"></span>Urgence différée</div><h4>Bradycardie symptomatique</h4></div></div><p class="ua">Position allongée · Atropine 0,5mg si disponible · Stimulation externe</p><div class="uc-body"><ol><li>Confirme : fréquence inférieure à 50 battements/min avec symptômes (malaise, confusion, douleur thoracique).</li><li>Allonge le patient, jambes légèrement surélevées.</li><li>Cherche les causes évidentes : <span data-gloss="hypothermie" style="border-bottom:1px dashed var(--accent);cursor:pointer;">hypothermie</span>, intoxication médicamenteuse, hypoglycémie.</li><li>Hypothermie : réchauffement progressif (couvertures, boissons chaudes si conscient).</li><li>Atropine si disponible : 0,5 mg IV ou sous-cutané, répétable toutes les 3 minutes jusqu'à 3 mg total.</li><li>Surveille la fréquence toutes les 5 minutes.</li><li>Dégradation (perte de conscience, arrêt) : passe au protocole RCP.</li></ol><p class="uc-note">Causes fréquentes : bêtabloquants, digitaliques, bloc auriculo-ventriculaire. Identifier la cause est aussi important que traiter le symptôme.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener">ERC Guidelines 2021 — Arythmies</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31504425/" target="_blank" rel="noopener">ESC 2019 — SVT</a></div></div></div></div>
 
@@ -1647,7 +1718,12 @@ function switchLang(l){
 
 // ── ACCORDÉON SOIGNER ──
 document.querySelectorAll('.uc').forEach(function(c){
-  c.addEventListener('click',function(){this.classList.toggle('open');});
+  c.addEventListener('click',function(e){
+    if(e.target.closest('.uc-body')||e.target.closest('a')){return;}
+    var isOpen=this.classList.contains('open');
+    document.querySelectorAll('.uc.open').forEach(function(o){o.classList.remove('open');});
+    if(!isOpen){this.classList.add('open');}
+  });
 });
 // ── GLOSSAIRE TERMS ──
 document.addEventListener('click',function(e){
