@@ -484,7 +484,7 @@ if(window.FIREBASE_READY){
       <a href="javascript:void(0)" onclick="goSection(this,'contact','Contact')" data-fr="Contact" data-en="Contact">Contact</a>
     </nav>
     <div class="hdr-search" id="hdrSearch">
-      <input type="search" id="searchInput" placeholder="Rechercher…" autocomplete="off" oninput="handleSearch(this.value)" onblur="setTimeout(()=>{closeSearch()},200)" data-fr-placeholder="Rechercher…" data-en-placeholder="Search…">
+      <input type="search" id="searchInput" placeholder="Rechercher…" autocomplete="off" oninput="handleSearch(this.value)" onsearch="handleSearch(this.value)" onblur="setTimeout(()=>{closeSearch()},200)" data-fr-placeholder="Rechercher…" data-en-placeholder="Search…">
       <span class="hdr-search-icon">⌕</span>
       <div id="search-results"></div>
     </div>
@@ -564,71 +564,6 @@ if(window.FIREBASE_READY){
     </div>
   </footer>
 
-<!-- ── MODALES FOOTER ── -->
-<div id="gloss-popover" style="display:none;" role="tooltip" aria-live="polite"></div>
-<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
-
-<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
-  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 16px;font-size:1.1rem;">Sources scientifiques</h3>
-  <p style="color:var(--ink-2);font-size:.88rem;line-height:1.6;margin:0 0 12px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables. Toutes les références sont citées dans les fiches correspondantes.</p>
-  <div style="display:flex;flex-direction:column;gap:8px;font-size:.83rem;">
-    <div><strong>Pharmacopées officielles</strong></div>
-    <a href="https://www.who.int/medicines/publications/pharmacopoeia/en/" target="_blank" rel="noopener" style="color:var(--accent);">WHO International Pharmacopoeia (2023)</a>
-    <a href="https://pharmacopee.ansm.sante.fr/" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Française — ANSM</a>
-    <a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Européenne 11e éd.</a>
-    <div style="margin-top:8px;"><strong>Guides cliniques OMS / MSF</strong></div>
-    <a href="https://www.who.int/publications/i/item/9789240052529" target="_blank" rel="noopener" style="color:var(--accent);">WHO Essential Medicines 2023</a>
-    <a href="https://medicalguidelines.msf.org/" target="_blank" rel="noopener" style="color:var(--accent);">MSF Clinical Guidelines</a>
-    <div style="margin-top:8px;"><strong>Urgences médicales</strong></div>
-    <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener" style="color:var(--accent);">ERC Resuscitation Guidelines 2021</a>
-    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed (NLM/NIH)</a>
-    <a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener" style="color:var(--accent);">Cochrane Library — revues systématiques</a>
-  </div>
-</div>
-
-<div id="modal-legal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
-  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 16px;font-size:1.1rem;">Mentions légales</h3>
-  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
-    <p><strong>Éditeur</strong> : DIG PHARMA — projet open-source non commercial.<br>Contact : <a href="mailto:contact@digpharma.org" style="color:var(--accent);">contact@digpharma.org</a></p>
-    <p><strong>Hébergement</strong> : Vercel Inc., 340 Pine Street Suite 701, San Francisco, CA 94104, USA.</p>
-    <p><strong>Avertissement médical</strong> : Les informations publiées sur ce site sont fournies à titre documentaire et éducatif uniquement. Elles ne constituent pas un avis médical, un diagnostic ou une prescription. DIG PHARMA ne peut en aucun cas être tenu responsable de l'utilisation qui serait faite de ces informations. En situation d'urgence médicale, contactez les services de secours.</p>
-    <p><strong>Responsabilité</strong> : L'utilisateur est seul responsable de l'usage qu'il fait des protocoles décrits. La reproduction de médicaments en dehors d'un cadre réglementaire homologué peut être soumise à des contraintes légales selon le pays de résidence.</p>
-    <p><strong>Données personnelles</strong> : Ce site ne collecte aucune donnée personnelle. Aucun cookie de traçage n'est utilisé.</p>
-  </div>
-</div>
-
-<div id="modal-licence" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
-  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 4px;font-size:1.1rem;">Licence ouverte</h3>
-  <p style="color:var(--accent);font-size:.85rem;margin:0 0 16px;font-weight:600;">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
-  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
-    <p>Vous êtes libre de :</p>
-    <ul style="margin:0 0 12px;padding-left:18px;">
-      <li><strong>Partager</strong> — copier et redistribuer le contenu sur tout support ou format.</li>
-      <li><strong>Adapter</strong> — remixer, transformer et construire à partir du contenu pour toute utilisation, y compris commerciale.</li>
-    </ul>
-    <p>Selon les conditions suivantes :</p>
-    <ul style="margin:0 0 12px;padding-left:18px;">
-      <li><strong>Attribution</strong> — Vous devez créditer DIG PHARMA, fournir un lien vers la licence et indiquer si des modifications ont été apportées.</li>
-      <li><strong>Partage dans les mêmes conditions</strong> — Si vous remixez ou transformez le contenu, vous devez distribuer vos contributions sous la même licence CC BY-SA 4.0.</li>
-    </ul>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener" style="color:var(--accent);">Texte complet de la licence →</a>
-  </div>
-</div>
-
-<div id="modal-presse" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(480px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
-  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
-  <h3 style="margin:0 0 16px;font-size:1.1rem;">Espace presse</h3>
-  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
-    <p>DIG PHARMA est un projet open-source documentant la production autonome de médicaments essentiels.</p>
-    <p>Pour toute demande journalistique, interview ou partenariat éditorial :</p>
-    <p><a href="mailto:presse@digpharma.org" style="color:var(--accent);font-weight:600;">presse@digpharma.org</a></p>
-    <p style="margin-top:16px;font-size:.78rem;color:var(--ink-3);">Nous répondons aux demandes sous 48h. Un kit presse (logos, screenshots, brief projet) est disponible sur demande.</p>
-  </div>
-</div>
-</div>
 </div><!-- /v-home -->
 
 <!-- ══════════════ INSTALLER ══════════════ -->
@@ -1855,7 +1790,8 @@ function buildSearchIndex(){
 
 function handleSearch(q){
   const box = document.getElementById('search-results');
-  if(!q || q.length < 2){ box.classList.remove('visible'); return; }
+  q = (q||'').trim();
+  if(q.length < 2){ box.classList.remove('visible'); return; }
   const qL = q.toLowerCase();
   const hits = SEARCH_INDEX.filter(item =>
     item.title.toLowerCase().includes(qL) || item.text.toLowerCase().includes(qL)
@@ -2452,6 +2388,72 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
+
+<!-- ── MODALES FOOTER ── -->
+<div id="gloss-popover" style="display:none;" role="tooltip" aria-live="polite"></div>
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;"></div>
+
+<div id="modal-sources" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Sources scientifiques</h3>
+  <p style="color:var(--ink-2);font-size:.88rem;line-height:1.6;margin:0 0 12px;">DIG PHARMA s'appuie exclusivement sur des sources primaires vérifiables. Toutes les références sont citées dans les fiches correspondantes.</p>
+  <div style="display:flex;flex-direction:column;gap:8px;font-size:.83rem;">
+    <div><strong>Pharmacopées officielles</strong></div>
+    <a href="https://www.who.int/medicines/publications/pharmacopoeia/en/" target="_blank" rel="noopener" style="color:var(--accent);">WHO International Pharmacopoeia (2023)</a>
+    <a href="https://pharmacopee.ansm.sante.fr/" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Française — ANSM</a>
+    <a href="https://www.edqm.eu/en/european-pharmacopoeia-ph-eur-11th-edition" target="_blank" rel="noopener" style="color:var(--accent);">Pharmacopée Européenne 11e éd.</a>
+    <div style="margin-top:8px;"><strong>Guides cliniques OMS / MSF</strong></div>
+    <a href="https://www.who.int/publications/i/item/9789240052529" target="_blank" rel="noopener" style="color:var(--accent);">WHO Essential Medicines 2023</a>
+    <a href="https://medicalguidelines.msf.org/" target="_blank" rel="noopener" style="color:var(--accent);">MSF Clinical Guidelines</a>
+    <div style="margin-top:8px;"><strong>Urgences médicales</strong></div>
+    <a href="https://www.cprguidelines.eu/" target="_blank" rel="noopener" style="color:var(--accent);">ERC Resuscitation Guidelines 2021</a>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:var(--accent);">PubMed (NLM/NIH)</a>
+    <a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener" style="color:var(--accent);">Cochrane Library — revues systématiques</a>
+  </div>
+</div>
+
+<div id="modal-legal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Mentions légales</h3>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p><strong>Éditeur</strong> : DIG PHARMA — projet open-source non commercial.<br>Contact : <a href="mailto:contact@digpharma.org" style="color:var(--accent);">contact@digpharma.org</a></p>
+    <p><strong>Hébergement</strong> : Vercel Inc., 340 Pine Street Suite 701, San Francisco, CA 94104, USA.</p>
+    <p><strong>Avertissement médical</strong> : Les informations publiées sur ce site sont fournies à titre documentaire et éducatif uniquement. Elles ne constituent pas un avis médical, un diagnostic ou une prescription. DIG PHARMA ne peut en aucun cas être tenu responsable de l'utilisation qui serait faite de ces informations. En situation d'urgence médicale, contactez les services de secours.</p>
+    <p><strong>Responsabilité</strong> : L'utilisateur est seul responsable de l'usage qu'il fait des protocoles décrits. La reproduction de médicaments en dehors d'un cadre réglementaire homologué peut être soumise à des contraintes légales selon le pays de résidence.</p>
+    <p><strong>Données personnelles</strong> : Ce site ne collecte aucune donnée personnelle. Aucun cookie de traçage n'est utilisé.</p>
+  </div>
+</div>
+
+<div id="modal-licence" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(520px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 4px;font-size:1.1rem;">Licence ouverte</h3>
+  <p style="color:var(--accent);font-size:.85rem;margin:0 0 16px;font-weight:600;">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p>Vous êtes libre de :</p>
+    <ul style="margin:0 0 12px;padding-left:18px;">
+      <li><strong>Partager</strong> — copier et redistribuer le contenu sur tout support ou format.</li>
+      <li><strong>Adapter</strong> — remixer, transformer et construire à partir du contenu pour toute utilisation, y compris commerciale.</li>
+    </ul>
+    <p>Selon les conditions suivantes :</p>
+    <ul style="margin:0 0 12px;padding-left:18px;">
+      <li><strong>Attribution</strong> — Vous devez créditer DIG PHARMA, fournir un lien vers la licence et indiquer si des modifications ont été apportées.</li>
+      <li><strong>Partage dans les mêmes conditions</strong> — Si vous remixez ou transformez le contenu, vous devez distribuer vos contributions sous la même licence CC BY-SA 4.0.</li>
+    </ul>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener" style="color:var(--accent);">Texte complet de la licence →</a>
+  </div>
+</div>
+
+<div id="modal-presse" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(480px,92vw);max-height:80vh;overflow-y:auto;background:var(--bg);border-radius:16px;padding:28px 32px;z-index:901;box-shadow:0 12px 40px rgba(0,0,0,.2);">
+  <button onclick="closeModal()" style="float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink-3);">✕</button>
+  <h3 style="margin:0 0 16px;font-size:1.1rem;">Espace presse</h3>
+  <div style="color:var(--ink-2);font-size:.85rem;line-height:1.7;">
+    <p>DIG PHARMA est un projet open-source documentant la production autonome de médicaments essentiels.</p>
+    <p>Pour toute demande journalistique, interview ou partenariat éditorial :</p>
+    <p><a href="mailto:presse@digpharma.org" style="color:var(--accent);font-weight:600;">presse@digpharma.org</a></p>
+    <p style="margin-top:16px;font-size:.78rem;color:var(--ink-3);">Nous répondons aux demandes sous 48h. Un kit presse (logos, screenshots, brief projet) est disponible sur demande.</p>
+  </div>
+</div>
+</div>
 
 </body>
 </html>
