@@ -422,6 +422,17 @@ footer{border-top:1px solid var(--line);padding:20px 28px;background:var(--surfa
 #gloss-popover .gp-close{background:none;border:none;font-size:16px;cursor:pointer;color:var(--ink-3);padding:0;line-height:1;}
 #gloss-popover .gp-def{font-size:.8rem;color:var(--ink-2);line-height:1.55;margin:0;}
 #gloss-popover .gp-link{display:block;font-size:.74rem;color:var(--accent);margin-top:8px;cursor:pointer;text-decoration:none;}
+
+/* ── Références scientifiques ── */
+.ref-section{margin:32px 0 8px;padding:20px 24px;background:var(--surface);border:1px solid var(--line);border-radius:10px;}
+.ref-section h3{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0 0 14px;}
+.ref-bloc{margin-bottom:14px;}
+.ref-bloc:last-child{margin-bottom:0;}
+.ref-bloc-title{font-size:.75rem;font-weight:600;color:var(--ink-2);margin-bottom:4px;}
+.ref-item{font-size:.73rem;color:var(--ink-3);line-height:1.6;padding-left:12px;position:relative;}
+.ref-item::before{content:"·";position:absolute;left:0;color:var(--accent);}
+.ref-item a{color:var(--accent);text-decoration:none;}
+.ref-item a:hover{text-decoration:underline;}
 </style>
 
 <!-- ══ FIREBASE CONFIG — à remplir après création du projet ══ -->
@@ -930,7 +941,7 @@ if(window.FIREBASE_READY){
     <button class="tab" onclick="showTab(this,'t-cul')" data-fr="À cultiver (15)" data-en="To grow (15)">À cultiver (15)</button>
     <button class="tab" onclick="showTab(this,'t-for')" data-fr="Forêt / Cueillette (15)" data-en="Forest / Foraging (15)">Forêt / Cueillette (15)</button>
   </div>
-  <div class="tab-pane " id="t-prec"><div class="mat-card"><h4>Para-aminophénol</h4><div class="mat-sub">Précurseur paracétamol</div><p>Poudre blanche · Amazon, eBay, Sigma-Aldrich · 15–30 €/kg · Légal · Aussi vendu en teinture capillaire</p></div><div class="mat-card"><h4>Acide salicylique</h4><div class="mat-sub">Précurseur aspirine</div><p>Poudre blanche · Amazon, cosmétique anti-acné, eBay · 5–15 €/kg · Légal</p></div><div class="mat-card"><h4>Anhydride acétique</h4><div class="mat-sub">Réactif d'acétylation</div><p>Liquide incolore, odeur vinaigre fort · TCI, Fisher Scientific, eBay chimie · 10–20 €/L · Légal (surveillance en France pour usage de synthèse)</p></div><div class="mat-card"><h4>Benzocaïne poudre</h4><div class="mat-sub">Anesthésique local topique</div><p>Poudre blanche · Amazon, eBay, cosmétique · 10–30 €/100 g · Légal</p></div><div class="mat-card"><h4>Lidocaïne base</h4><div class="mat-sub">Anesthésique local</div><p>Poudre blanche · Sigma-Aldrich, TCI · 30–80 €/25 g · Légal sans prescription en France</p></div><div class="mat-card"><h4>Eau oxygénée 30–35 %</h4><div class="mat-sub">Précurseur H₂O₂ 3 %</div><p>Liquide incolore très oxydant · Drogueries, piscines (traitement eau) · 5–10 €/L · Gants + lunettes obligatoires</p></div><div class="mat-card"><h4>Iode en cristaux (I₂)</h4><div class="mat-sub">Antiseptique, Lugol</div><p>Cristaux brun-noir · Pharmacies vrac, photographie argentique, chimie · 10–20 €/100 g</p></div><div class="mat-card"><h4>Iodure de potassium (KI)</h4><div class="mat-sub">Solubilisant de l'iode</div><p>Poudre blanche · Pharmacies, chimie · 10–15 €/100 g</p></div><div class="mat-card"><h4>Chlorure de potassium (KCl)</h4><div class="mat-sub">Électrolyte SRO renforcée</div><p>Poudre blanche · Rayons « sel allégé » en supermarché (NoSalt, LoSalt) · 3–5 €/250 g</p></div><div class="mat-card"><h4>Acide citrique</h4><div class="mat-sub">Stabilisant, conservateur</div><p>Poudre blanche · Supermarchés (rayon conserves), Amazon · 2–5 €/kg</p></div><div class="mat-card"><h4>Chlorure ferrique (FeCl₃)</h4><div class="mat-sub">Réactif contrôle qualité</div><p>Poudre orange · Drogueries (mordant teinture), chimie · 3–8 €/100 g</p></div><div class="mat-card"><h4>Carbomère (gel neutre)</h4><div class="mat-sub">Base galénique gel</div><p>Poudre blanche → gel transparent · Cosmétique DIY, eBay · 5–15 €/100 g</p></div><div class="mat-card"><h4>Beurre de cacao / Witepsol</h4><div class="mat-sub">Base suppositoires</div><p>Fond à 37 °C · Magasins bio, pharmacies, Amazon · 5–15 €/kg</p></div><div class="mat-card"><h4>Plaques TLC silice (60 F254)</h4><div class="mat-sub">Contrôle qualité TLC</div><p>Plaques alu ou plastique · Amazon, eBay, TCI · 10–20 €/25 plaques</p></div><div class="mat-card"><h4>Lampe UV 254 nm</h4><div class="mat-sub">Révélateur TLC</div><p>Stylo ou lampe portative · Amazon · 5–15 €</p></div></div>
+  <div class="tab-pane " id="t-prec"><div class="mat-card"><h4>Para-aminophénol</h4><div class="mat-sub">Précurseur paracétamol</div><p>Poudre blanche · boutiques en ligne spécialisées · 15–30 €/kg · Légal · Aussi vendu en teinture capillaire</p></div><div class="mat-card"><h4>Acide salicylique</h4><div class="mat-sub">Précurseur aspirine</div><p>Poudre blanche · pharmacies, boutiques en ligne · 5–15 €/kg · Légal</p></div><div class="mat-card"><h4>Anhydride acétique</h4><div class="mat-sub">Réactif d'acétylation</div><p>Liquide incolore, odeur vinaigre fort · fournisseurs de chimie fine · 10–20 €/L · Légal (surveillance en France pour usage de synthèse)</p></div><div class="mat-card"><h4>Benzocaïne poudre</h4><div class="mat-sub">Anesthésique local topique</div><p>Poudre blanche · pharmacies, boutiques en ligne · 10–30 €/100 g · Légal</p></div><div class="mat-card"><h4>Lidocaïne base</h4><div class="mat-sub">Anesthésique local</div><p>Poudre blanche · fournisseurs de chimie fine · 30–80 €/25 g · Légal sans prescription en France</p></div><div class="mat-card"><h4>Eau oxygénée 30–35 %</h4><div class="mat-sub">Précurseur H₂O₂ 3 %</div><p>Liquide incolore très oxydant · Drogueries, piscines (traitement eau) · 5–10 €/L · Gants + lunettes obligatoires</p></div><div class="mat-card"><h4>Iode en cristaux (I₂)</h4><div class="mat-sub">Antiseptique, Lugol</div><p>Cristaux brun-noir · Pharmacies vrac, photographie argentique, chimie · 10–20 €/100 g</p></div><div class="mat-card"><h4>Iodure de potassium (KI)</h4><div class="mat-sub">Solubilisant de l'iode</div><p>Poudre blanche · Pharmacies, chimie · 10–15 €/100 g</p></div><div class="mat-card"><h4>Chlorure de potassium (KCl)</h4><div class="mat-sub">Électrolyte SRO renforcée</div><p>Poudre blanche · Rayons « sel allégé » en supermarché · 3–5 €/250 g</p></div><div class="mat-card"><h4>Acide citrique</h4><div class="mat-sub">Stabilisant, conservateur</div><p>Poudre blanche · Supermarchés (rayon conserves), boutiques en ligne · 2–5 €/kg</p></div><div class="mat-card"><h4>Chlorure ferrique (FeCl₃)</h4><div class="mat-sub">Réactif contrôle qualité</div><p>Poudre orange · Drogueries (mordant teinture), chimie · 3–8 €/100 g</p></div><div class="mat-card"><h4>Carbomère (gel neutre)</h4><div class="mat-sub">Base galénique gel</div><p>Poudre blanche → gel transparent · Cosmétique DIY, boutiques en ligne · 5–15 €/100 g</p></div><div class="mat-card"><h4>Beurre de cacao / Witepsol</h4><div class="mat-sub">Base suppositoires</div><p>Fond à 37 °C · Magasins bio, pharmacies, boutiques en ligne · 5–15 €/kg</p></div><div class="mat-card"><h4>Plaques TLC silice (60 F254)</h4><div class="mat-sub">Contrôle qualité TLC</div><p>Plaques alu ou plastique · boutiques en ligne spécialisées · 10–20 €/25 plaques</p></div><div class="mat-card"><h4>Lampe UV 254 nm</h4><div class="mat-sub">Révélateur TLC</div><p>Stylo ou lampe portative · boutiques en ligne · 5–15 €</p></div></div>
   <div class="tab-pane on" id="t-sup"><div class="mat-card"><h4>Sel de mer / NaCl</h4><div class="mat-sub">Osmotique, conservateur</div><p>Sérum physiologique 0,9% · Gargarismes · Conservation</p></div><div class="mat-card"><h4>Vinaigre blanc 8°</h4><div class="mat-sub">Acide acétique</div><p>Antimicrobien de surface · Antifongique cutané</p></div><div class="mat-card"><h4>Alcool éthylique 95°</h4><div class="mat-sub">Éthanol</div><p>Antiseptique · Solvant pour extractions et teintures</p></div><div class="mat-card"><h4>Huile d'olive vierge</h4><div class="mat-sub">Oléique, polyphénols</div><p>Excipient universel · Base pommades · Émollient</p></div><div class="mat-card"><h4>Miel brut toutes fleurs</h4><div class="mat-sub">H₂O₂, pH acide, propolis</div><p>Antibactérien · Cicatrisant · Base sirops</p></div><div class="mat-card"><h4>Ail frais</h4><div class="mat-sub">Allicine (libérée à l'écrasement)</div><p>Antibactérien large spectre · Antifongique · Antiparasitaire</p></div><div class="mat-card"><h4>Gingembre frais</h4><div class="mat-sub">Gingérols, shogaols</div><p>Anti-inflammatoire · Antiémétique · Antipyrétique léger</p></div><div class="mat-card"><h4>Curcuma en poudre</h4><div class="mat-sub">Curcumine</div><p>Anti-inflammatoire chronique · Hépatoprotecteur · Antioxydant</p></div><div class="mat-card"><h4>Citron frais</h4><div class="mat-sub">Acide citrique, vitamine C</div><p>Antiseptique buccal · Reminéralisant · Conservateur</p></div><div class="mat-card"><h4>Bicarbonate de soude</h4><div class="mat-sub">NaHCO₃</div><p>Antiacide · Tampon pH préparations · Antiseptique buccal</p></div><div class="mat-card"><h4>Eau oxygénée 3%</h4><div class="mat-sub">H₂O₂</div><p>Antiseptique plaies · Débridement mécanique (effervescence)</p></div><div class="mat-card"><h4>Charbon végétal activé</h4><div class="mat-sub">Carbone macroporeux</div><p>Adsorbant intoxications · Anti-ballonnements</p></div><div class="mat-card"><h4>Argile verte illite</h4><div class="mat-sub">Silicate alumineux</div><p>Anti-infectieuse locale · Adsorbante · Cicatrisante</p></div><div class="mat-card"><h4>Sucre blanc (saccharose)</h4><div class="mat-sub">Osmotique</div><p>Conservateur · Base sirops · Pansement osmotique plaies</p></div><div class="mat-card"><h4>Café moulu (caféine)</h4><div class="mat-sub">Caféine, théophylline</div><p>Adjuvant antalgique · Stimulant respiratoire</p></div><div class="mat-card"><h4>Paracétamol (pharmacie)</h4><div class="mat-sub">Para-acétamino-phénol</div><p>Antipyrétique · Antalgique palier 1</p></div><div class="mat-card"><h4>Aspirine (pharmacie)</h4><div class="mat-sub">Acide acétylsalicylique</div><p>Anti-inflammatoire · Antiplaquettaire · Antipyrétique</p></div><div class="mat-card"><h4>SRO OMS sachet</h4><div class="mat-sub">Na+, K+, Glucose, Cl−</div><p>Réhydratation orale infections digestives</p></div><div class="mat-card"><h4>Vaseline blanche</h4><div class="mat-sub">Paraffine</div><p>Excipient inerte · Pansement occlusif · Protection peau</p></div><div class="mat-card"><h4>Glycérine végétale</h4><div class="mat-sub">Glycérol</div><p>Humectant · Co-solvant · Lubrifiant · Base suppositoires</p></div><div class="mat-card"><h4>Savon de Marseille 72%</h4><div class="mat-sub">Triglycérides, soude</div><p>Tensioactif · Dégraissant · Décontamination mains</p></div><div class="mat-card"><h4>Vinaigre de cidre</h4><div class="mat-sub">Acide malique + acétique</div><p>Antifongique cutané · Régulateur pH · Oreilles</p></div><div class="mat-card"><h4>Huile de coco vierge</h4><div class="mat-sub">Acide laurique C12</div><p>Antimicrobien · Excipient pommades · Antifongique</p></div><div class="mat-card"><h4>Argile blanche kaolin</h4><div class="mat-sub">Silicate d'aluminium</div><p>Poudre protectrice · Excipient comprimés DIY</p></div><div class="mat-card"><h4>Propolis (ruche ou apiculteur)</h4><div class="mat-sub">Flavonoïdes, acides phénoliques</div><p>Antibactérien · Antifongique · Antiviral · Cicatrisant</p></div></div>
   <div class="tab-pane " id="t-cul">
 <p style="color:var(--ink-2);font-size:.88rem;margin:0 0 16px 0;line-height:1.5;">Quantités cibles pour un groupe de 10 personnes sur un an. Les parties récoltées (feuilles, fleurs, racines) sont indiquées en poids sec sauf mention contraire.</p>
@@ -998,7 +1009,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">C'est quoi</div>
   <div class="f-row">L'analgésique le plus utilisé au monde. Réduit la douleur et la fièvre. Produit depuis 1956, brevet expiré, procédé dans la Pharmacopée Européenne.</div>
   <div class="f-label">Précurseurs (pour 10 g)</div>
-  <div class="f-row"><strong>Para-aminophénol</strong> (poudre blanche, 10,9 g) — Amazon, eBay, Sigma-Aldrich, 15–30 €/kg. Aussi vendu comme intermédiaire de teinture capillaire. Légal partout.<br><strong>Anhydride acétique</strong> (10,5 mL) — fournisseurs chimie (TCI, Fisher), 10–20 €/L. Odeur forte de vinaigre concentré — travailler en extérieur ou sous ventilation.<br><strong>Eau distillée</strong> (12 mL)</div>
+  <div class="f-row"><strong>Para-aminophénol</strong> (poudre blanche, 10,9 g) — boutiques en ligne spécialisées, 15–30 €/kg. Aussi vendu comme intermédiaire de teinture capillaire. Légal partout.<br><strong>Anhydride acétique</strong> (10,5 mL) — fournisseurs chimie (fournisseurs de chimie fine, Fisher), 10–20 €/L. Odeur forte de vinaigre concentré — travailler en extérieur ou sous ventilation.<br><strong>Eau distillée</strong> (12 mL)</div>
   <div class="f-label">Matériel</div>
   <div class="f-row">Bécher 200 mL ou casserole inox · Thermomètre · Plaque chauffante ou bain-marie · Filtre à café · Balance précise (±0,01 g) · Gants nitrile + lunettes</div>
   <div class="f-label">Procédé étape par étape</div>
@@ -1028,7 +1039,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">C'est quoi</div>
   <div class="f-row">Anti-douleur, anti-fièvre, anti-inflammatoire et anticoagulant (fluidifie le sang). Synthèse connue depuis 1897, c'est le TP de chimie de terminale. 2 précurseurs, 30 minutes.</div>
   <div class="f-label">Précurseurs (pour 10 g)</div>
-  <div class="f-row"><strong>Acide salicylique</strong> (13,8 g) — Amazon, eBay, cosmétique bio (utilisé contre l'acné), 5–15 €/kg.<br><strong>Anhydride acétique</strong> (14 mL) — même source que paracétamol.<br><strong>Acide phosphorique 85 %</strong> (5 gouttes, catalyseur) — droguerie, magasin brassage, 5–10 €/L.</div>
+  <div class="f-row"><strong>Acide salicylique</strong> (13,8 g) — pharmacies, boutiques en ligne bio (utilisé contre l'acné), 5–15 €/kg.<br><strong>Anhydride acétique</strong> (14 mL) — même source que paracétamol.<br><strong>Acide phosphorique 85 %</strong> (5 gouttes, catalyseur) — droguerie, magasin brassage, 5–10 €/L.</div>
   <div class="f-label">Procédé étape par étape</div>
   <div class="f-row">
     1. Peser 13,8 g d'acide salicylique dans un bécher.<br>
@@ -1054,7 +1065,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">Difficulté</div>
   <div class="f-row">Synthèse en 3 étapes catalytiques (procédé Hoechst simplifié). Accessible avec un labo équipé (colonne de distillation, solvants anhydres). Pas un premier projet — faire paracétamol et aspirine d'abord.</div>
   <div class="f-label">Précurseurs</div>
-  <div class="f-row"><strong>Isobutylbenzène</strong> (précurseur principal) + chlorure d'acétyle + chlorure d'aluminium (catalyseur Lewis) → dans des fournisseurs chimie industrielle (Sigma-Aldrich, TCI, Acros). Tous légaux.</div>
+  <div class="f-row"><strong>Isobutylbenzène</strong> (précurseur principal) + chlorure d'acétyle + chlorure d'aluminium (catalyseur Lewis) → dans des fournisseurs chimie industrielle (fournisseurs de chimie fine, Acros). Tous légaux.</div>
   <div class="f-label">Référence</div>
   <div class="f-row">Procédé Boots-Hoechst (brevet expiré 1985). Documenté dans J. Chem. Ed. 2001 comme protocole de synthèse universitaire.</div>
   <span class="f-badge"><a href="https://pubs.acs.org/doi/10.1021/ed078p839" target="_blank" rel="noopener">J. Chem. Ed. 2001 — Ibuprofen synthesis</a></span>
@@ -1076,13 +1087,13 @@ if(window.FIREBASE_READY){
   <div class="f-label">C'est quoi</div>
   <div class="f-row">L'éthanol à 70 % tue bactéries et virus sur la peau et les surfaces. À 95 %, il sert de solvant pour d'autres préparations. C'est la base de presque tout le reste.</div>
   <div class="f-label">Précurseur</div>
-  <div class="f-row"><strong>Alcool agricole pur 95–96°</strong> (eau-de-vie, alcool de betterave alimentaire) — épiceries spécialisées, distillateurs, Amazon (Everclear), 10–25 €/L.<br><strong>Ne jamais utiliser l'alcool à brûler</strong> — il contient du méthanol (toxique) et des dénaturants. Si tu n'as que ça, une redistillation avec un alambic permet de le purifier (méthanol bout à 64,7 °C, éthanol à 78,4 °C — séparer les deux fractions).</div>
+  <div class="f-row"><strong>Alcool agricole pur 95–96°</strong> (eau-de-vie, alcool de betterave alimentaire) — épiceries spécialisées, distillateurs, boutiques en ligne (Everclear), 10–25 €/L.<br><strong>Ne jamais utiliser l'alcool à brûler</strong> — il contient du méthanol (toxique) et des dénaturants. Si tu n'as que ça, une redistillation avec un alambic permet de le purifier (méthanol bout à 64,7 °C, éthanol à 78,4 °C — séparer les deux fractions).</div>
   <div class="f-label">Pour obtenir 70° depuis 95°</div>
   <div class="f-row">Formule de dilution : prendre <strong>737 mL d'alcool à 95°</strong> + <strong>263 mL d'eau distillée</strong> = 1 litre à 70°.</div>
   <div class="f-label">Pour obtenir 95° (distillation)</div>
   <div class="f-row">Chauffer de l'alcool alimentaire fort dans un alambic. Collecter la fraction qui distille entre 78 et 79 °C — c'est l'éthanol pur.</div>
   <div class="f-label">Contrôle qualité</div>
-  <div class="f-row"><strong>Alcoomètre</strong> (pèse-alcool, 5–10 € sur Amazon) — mesure directe du degré. Odeur : alcool pur, sans odeur de plastique ou de solvant.</div>
+  <div class="f-row"><strong>Alcoomètre</strong> (pèse-alcool, 5–10 € sur boutiques en ligne) — mesure directe du degré. Odeur : alcool pur, sans odeur de plastique ou de solvant.</div>
   <span class="f-badge"><a href="https://www.who.int/docs/default-source/documents/emergencies/coronavirus/aide-memoire-alcohol-based-handrub.pdf" target="_blank" rel="noopener">WHO AHF Formulation v3</a></span>
 </div>
 
@@ -1152,7 +1163,7 @@ if(window.FIREBASE_READY){
   <div class="f-row">
     1. Dissoudre 9 g de sel dans 1 L d'eau distillée. Agiter jusqu'à dissolution complète.<br>
     2. <strong>Pour usage stérile (plaies internes, yeux) :</strong><br>
-    — Option A : filtrer sur membrane 0,22 µm (filtre seringue, 1–2 €/unité, Amazon/eBay) → tue bactéries et virus.<br>
+    — Option A : filtrer sur membrane 0,22 µm (filtre seringue, 1–2 €/unité, boutiques en ligne/boutiques en ligne) → tue bactéries et virus.<br>
     — Option B : mettre en bocal fermé dans une cocotte-minute à pression maximale pendant 20 min (équivalent autoclave 121 °C).<br>
     3. Mettre en flacon stérile fermé.
   </div>
@@ -1211,7 +1222,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">C'est quoi</div>
   <div class="f-row">Anesthésique local qui engourdit la surface de la peau ou des muqueuses (l'intérieur de la bouche, etc.) pendant 20 à 40 minutes. Utilisé en dentisterie, pour les aphtes, les brûlures légères, les hémorroïdes. Effet uniquement en surface — ne pénètre pas les tissus profonds.</div>
   <div class="f-label">Précurseurs (pour 100 g de gel)</div>
-  <div class="f-row"><strong>Benzocaïne en poudre</strong> (20 g) — légale, Amazon, eBay, fournisseurs cosmétiques. Aussi utilisée en maquillage comme anesthésiant léger. 10–30 €/100 g.<br><strong>Éthanol 95 %</strong> (20 mL, solvant pour dissoudre la benzocaïne)<br><strong>Base gel neutre</strong> (80 g) — carbomère (gel transparent, pharmacies/eBay), ou vaseline blanche, ou gel d'aloe vera neutre</div>
+  <div class="f-row"><strong>Benzocaïne en poudre</strong> (20 g) — légale, boutiques en ligne, boutiques en ligne, fournisseurs cosmétiques. Aussi utilisée en maquillage comme anesthésiant léger. 10–30 €/100 g.<br><strong>Éthanol 95 %</strong> (20 mL, solvant pour dissoudre la benzocaïne)<br><strong>Base gel neutre</strong> (80 g) — carbomère (gel transparent, pharmacies/boutiques en ligne), ou vaseline blanche, ou gel d'aloe vera neutre</div>
   <div class="f-label">Procédé</div>
   <div class="f-row">
     1. Peser 20 g de benzocaïne en poudre.<br>
@@ -1235,7 +1246,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">Méthode 1 — Reformulation directe</div>
   <div class="f-row">Utiliser un gel lidocaïne 2 % du commerce comme base. Pour augmenter la concentration à 5 % : ajouter 3 g de lidocaïne base (disponible chez fournisseurs chimie, légale) pour 100 g de gel commercial. Mélanger à fond.</div>
   <div class="f-label">Méthode 2 — Depuis poudre</div>
-  <div class="f-row"><strong>Lidocaïne base</strong> (poudre blanche) — légale en France, Sigma-Aldrich, TCI, 30–80 €/25 g. Dissoudre dans acide chlorhydrique dilué pour obtenir lidocaïne chlorhydrate (plus soluble dans l'eau). Incorporer dans gel carbomère neutre.</div>
+  <div class="f-row"><strong>Lidocaïne base</strong> (poudre blanche) — légale en France, fournisseurs de chimie fine, 30–80 €/25 g. Dissoudre dans acide chlorhydrique dilué pour obtenir lidocaïne chlorhydrate (plus soluble dans l'eau). Incorporer dans gel carbomère neutre.</div>
   <div class="f-label">Usage</div>
   <div class="f-row">Anesthésie cutanée avant suture, soins dentaires de terrain, douleurs sur muqueuses. Effet en 5–10 min, durée 45–90 min selon concentration.</div>
   <div class="f-label">Attention</div>
@@ -1307,7 +1318,7 @@ if(window.FIREBASE_READY){
   <div class="f-label">C'est quoi</div>
   <div class="f-row">Mettre une poudre (paracétamol, charbon activé, etc.) en gélules dosées précisément. La mise en forme est souvent aussi importante que la synthèse — une poudre libre est difficile à doser et à avaler.</div>
   <div class="f-label">Matériel</div>
-  <div class="f-row"><strong>Gélules vides taille 0</strong> (500–600 mg de capacité) — Amazon, eBay, herboristeries, 5–10 €/100 unités. Taille 1 (400 mg), taille 2 (300 mg) aussi disponibles.<br><strong>Machine à gélules manuelle</strong> (plaque de remplissage 24 ou 100 trous) — 5–20 € sur Amazon. Pas indispensable mais multiplie la vitesse par 20.<br><strong>Balance précise ±0,01 g</strong> — obligatoire pour les médicaments.</div>
+  <div class="f-row"><strong>Gélules vides taille 0</strong> (500–600 mg de capacité) — boutiques en ligne, boutiques en ligne, herboristeries, 5–10 €/100 unités. Taille 1 (400 mg), taille 2 (300 mg) aussi disponibles.<br><strong>Machine à gélules manuelle</strong> (plaque de remplissage 24 ou 100 trous) — 5–20 € sur boutiques en ligne. Pas indispensable mais multiplie la vitesse par 20.<br><strong>Balance précise ±0,01 g</strong> — obligatoire pour les médicaments.</div>
   <div class="f-label">Procédé sans machine</div>
   <div class="f-row">
     1. Peser la dose souhaitée (ex : 500 mg de paracétamol).<br>
@@ -1330,7 +1341,7 @@ if(window.FIREBASE_READY){
   <div class="f-row">
     1. Faire fondre 9 g de beurre de cacao au bain-marie à 40 °C (ne pas surchauffer).<br>
     2. Hors feu, incorporer 1 g de paracétamol en poudre (soit 10 % = 500 mg dans un suppositoire de 5 g). Mélanger rapidement.<br>
-    3. Couler dans des moules à suppositoires (plastique souple, Amazon, 5–10 €) ou dans du papier aluminium roulé en tube.<br>
+    3. Couler dans des moules à suppositoires (plastique souple, boutiques en ligne, 5–10 €) ou dans du papier aluminium roulé en tube.<br>
     4. Laisser refroidir au réfrigérateur 1 h avant démoulage.
   </div>
   <div class="f-label">Conservation</div>
@@ -1366,8 +1377,8 @@ if(window.FIREBASE_READY){
   <div class="f-row">La TLC (chromatographie sur couche mince) est la technique la plus simple pour vérifier la pureté d'une molécule. Une plaque + une lampe UV + un solvant. C'est ce qui distingue un labo sérieux d'une cuisine. Coût : 5–10 € pour débuter.</div>
   <div class="f-label">Matériel</div>
   <div class="f-row">
-    <strong>Plaques TLC silice aluminium</strong> (60 F254) — Amazon, eBay, TCI, 10–20 €/25 plaques. Les plaques en plastique (5–8 €) suffisent pour un premier labo.<br>
-    <strong>Lampe UV 254 nm</strong> — 5–15 € sur Amazon. Révèle les molécules organiques qui absorbent les UV.<br>
+    <strong>Plaques TLC silice aluminium</strong> (60 F254) — boutiques en ligne spécialisées, 10–20 €/25 plaques. Les plaques en plastique (5–8 €) suffisent pour un premier labo.<br>
+    <strong>Lampe UV 254 nm</strong> — 5–15 € sur boutiques en ligne. Révèle les molécules organiques qui absorbent les UV.<br>
     <strong>Solvants d'élution</strong> : éthyl acétate + hexane (90/10 pour paracétamol) — fournisseurs chimie.<br>
     <strong>Capillaire en verre</strong> (ou micropipette) pour déposer l'échantillon.
   </div>
@@ -1402,9 +1413,9 @@ if(window.FIREBASE_READY){
 <div class="formula-card">
   <h4>Mesures physiques — pH, degré alcool, densité</h4>
   <div class="f-label">pH-mètre numérique</div>
-  <div class="f-row">10–20 € sur Amazon. Calibrer avant chaque série de mesures avec solutions tampon pH 4 et pH 7 (incluses). Mesurer pH de toutes les solutions — déviation de ±0,5 par rapport à la cible = à investiguer.</div>
+  <div class="f-row">10–20 € sur boutiques en ligne. Calibrer avant chaque série de mesures avec solutions tampon pH 4 et pH 7 (incluses). Mesurer pH de toutes les solutions — déviation de ±0,5 par rapport à la cible = à investiguer.</div>
   <div class="f-label">Alcoomètre (pèse-alcool)</div>
-  <div class="f-row">5–10 € sur Amazon. Mesure le degré d'alcool par densité. Tremper dans la solution, lire la graduation à fleur de liquide. Indispensable pour vérifier alcool 70° et 95°.</div>
+  <div class="f-row">5–10 € sur boutiques en ligne. Mesure le degré d'alcool par densité. Tremper dans la solution, lire la graduation à fleur de liquide. Indispensable pour vérifier alcool 70° et 95°.</div>
   <div class="f-label">Réfractomètre</div>
   <div class="f-row">15–30 €. Mesure la concentration en sucre (° Brix) ou en sel (% NaCl) selon le modèle. Utile pour vérifier SRO et solutions de glucose.</div>
   <div class="f-label">Balance précise ±0,01 g</div>
@@ -1447,13 +1458,65 @@ if(window.FIREBASE_READY){
   <div class="f-label">Méthode 2 — Chloration (eau de Javel)</div>
   <div class="f-row">2 gouttes d'eau de Javel 2,6 % par litre d'eau claire. Attendre 30 min. Pour eau trouble : filtrer d'abord sur tissu propre + 4 gouttes. Goût de chlore léger = normal et signe d'efficacité.</div>
   <div class="f-label">Méthode 3 — Filtre céramique DIY</div>
-  <div class="f-row">Filtre gravitaire en deux seaux : seau supérieur avec filtre céramique (pores 0,2 µm, Amazon/eBay, 10–20 €) → élimine bactéries et parasites. À compléter avec chloration pour les virus.</div>
+  <div class="f-row">Filtre gravitaire en deux seaux : seau supérieur avec filtre céramique (pores 0,2 µm, boutiques en ligne/boutiques en ligne, 10–20 €) → élimine bactéries et parasites. À compléter avec chloration pour les virus.</div>
   <span class="f-badge"><a href="https://www.who.int/water_sanitation_health/publications/2011/dwq_guidelines/en/" target="_blank" rel="noopener">WHO Water Quality Guidelines 2017</a></span>
 </div>
 
 </div><!-- /bloc-body 08 -->
 
-  </div><!-- /blocs container -->
+  
+<div class="ref-section">
+  <h3>Références scientifiques</h3>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">01 · Analgésiques — Antifièvre</div>
+    <div class="ref-item">Graham GG, Davies MJ, Day RO, et al. "The modern pharmacology of paracetamol: therapeutic actions, mechanism of action, metabolism, toxicity." <em>Inflammopharmacology.</em> 2013;21(3):201–232. <a href="https://doi.org/10.1007/s10787-013-0172-x" target="_blank" rel="noopener">DOI: 10.1007/s10787-013-0172-x</a></div>
+    <div class="ref-item">Conseil de l'Europe. <em>Pharmacopée Européenne</em>, 11e éd. EDQM, Strasbourg, 2023. Monographie paracétamol (0129) ; ibuprofène (0721).</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">02 · Antiseptiques — Désinfectants</div>
+    <div class="ref-item">McDonnell G, Russell AD. "Antiseptics and disinfectants: activity, action, and resistance." <em>Clin Microbiol Rev.</em> 1999;12(1):147–179. <a href="https://doi.org/10.1128/cmr.12.1.147" target="_blank" rel="noopener">DOI: 10.1128/cmr.12.1.147</a></div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>WHO Guidelines on Hand Hygiene in Health Care.</em> Genève : OMS ; 2009. ISBN 978 92 4 159790 6.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">03 · Solutions stériles — Réhydratation</div>
+    <div class="ref-item">OMS/UNICEF. <em>Reduced osmolarity oral rehydration salts (ORS) formulation.</em> Report of experts meeting, New York, 18 juillet 2001. WHO/FCH/CAH/01.22. <a href="https://iris.who.int/handle/10665/67322" target="_blank" rel="noopener">iris.who.int</a></div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>The Treatment of Diarrhoea: A Manual for Physicians and Other Senior Health Workers.</em> 4e révision. Genève : OMS ; 2005. WHO/FCH/CAH/05.2.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">04 · Anesthésiques locaux</div>
+    <div class="ref-item">Becker DE, Reed KL. "Essentials of local anesthetic pharmacology." <em>Anesth Prog.</em> 2006;53(3):98–109. PMID: 17175824. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1693664/" target="_blank" rel="noopener">PMC1693664</a></div>
+    <div class="ref-item">Covino BG. "Pharmacology of local anesthetic agents." <em>Br J Anaesth.</em> 1986;58(7):701–716. PMID: 3524647.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">05 · Antibiotiques de terrain</div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>WHO Model List of Essential Medicines</em>, 23e liste, 2023. WHO/MHP/HPS/EML/2023.02. <a href="https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02" target="_blank" rel="noopener">who.int</a></div>
+    <div class="ref-item">Goossens H, Ferech M, Vander Stichele R, Elseviers M. "Outpatient antibiotic use in Europe and association with resistance." <em>Lancet.</em> 2005;365(9459):579–587. PMID: 15708101.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">06 · Galénique — Mise en forme</div>
+    <div class="ref-item">Adejare A, ed. <em>Remington: The Science and Practice of Pharmacy.</em> 22e éd. Londres : Pharmaceutical Press ; 2012. ISBN 978-0-85711-062-6.</div>
+    <div class="ref-item">Aulton ME, Taylor KMG, eds. <em>Aulton's Pharmaceutics: The Design and Manufacture of Medicines.</em> 5e éd. Amsterdam : Elsevier ; 2018. ISBN 978-0-7020-7005-6.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">07 · Contrôle qualité</div>
+    <div class="ref-item">International Council for Harmonisation (ICH). <em>Q2(R1): Validation of Analytical Procedures: Text and Methodology.</em> Novembre 2005. <a href="https://database.ich.org/sites/default/files/Q2(R1)%20Guideline.pdf" target="_blank" rel="noopener">ich.org</a></div>
+    <div class="ref-item">Conseil de l'Europe. <em>Pharmacopée Européenne</em>, 11e éd., Chapitre 2.2 : Méthodes physico-chimiques. EDQM, 2023.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">08 · Urgences terrain</div>
+    <div class="ref-item">American College of Surgeons, Committee on Trauma. <em>ATLS: Advanced Trauma Life Support Student Course Manual.</em> 10e éd. Chicago : ACS ; 2018. ISBN 978-0-9968262-3-5.</div>
+    <div class="ref-item">Médecins Sans Frontières. <em>Clinical Guidelines: Diagnosis and Treatment Manual.</em> Édition 2019. Paris : MSF ; 2019. <a href="https://medicalguidelines.msf.org" target="_blank" rel="noopener">medicalguidelines.msf.org</a></div>
+  </div>
+</div>
+</div><!-- /blocs container -->
 </div><!-- /page-wrap -->
 </div><!-- /v-preparer -->
 
@@ -1510,7 +1573,89 @@ if(window.FIREBASE_READY){
   <div class="ug"><div class="uc"><div class="uc-toggle"><div><div class="sev dif"><span class="sd"></span>Urgence différée</div><h4>Corps étranger oculaire</h4></div></div><p class="ua">Lavage abondant sérum physio 15 min · Retournement paupière · Extraction coton-tige stérile</p><div class="uc-body"><ol><li>Lavage oculaire abondant : eau propre ou sérum physiologique en flux continu pendant 5 minutes.</li><li>Objet sous la paupière inférieure : tire doucement vers le bas, retire avec le coin d'une compresse propre ou un coton-tige mouillé.</li><li>Objet sous la paupière supérieure : demande de regarder vers le bas, retourne la paupière sur un coton-tige fin, retire si visible.</li><li>Objet fiché dans la cornée : ne touche pas, protège avec un gobelet rigide sans appuyer, évacue.</li><li>Après extraction : collyre antibiotique (chloramphénicol 0,5 %) 1 goutte 4 fois par jour pendant 3 jours.</li><li>Ibuprofène 400 mg si douleur persistante.</li></ol><p class="uc-note">Oeil rouge et douloureux après exposition au métal, au bois ou au sable : corps étranger jusqu'à preuve du contraire. Ne jamais frotter l'oeil.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener">WHO Prevention of Blindness 2019</a> · <a href="https://medicalguidelines.msf.org/viewport/CG/english/clinical-guidelines-51091428.html" target="_blank" rel="noopener">MSF Clinical Guidelines</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Brûlure chimique oeil</h4></div></div><p class="ua">Lavage continu eau 30 min IMMÉDIAT · pH control · Pansement occlusif · Vérif ulcères cornée</p><div class="uc-body"><ol><li>Urgence absolue : lavage immédiat, sans même identifier la substance.</li><li>Ouvre de force l'oeil si nécessaire et verse de l'eau en flux continu pendant 20 à 30 minutes minimum.</li><li>Bases (soude, chaux) pénètrent plus profondément que les acides : laver encore plus longtemps.</li><li>Retire les lentilles de contact avant ou pendant le lavage.</li><li>Retourne les paupières et rince également dessous.</li><li>Après lavage : pansement oculaire non compressif, antalgique oral.</li><li>Collyre antibiotique + corticoïde (dexaméthasone 0,1 % si disponible) après le lavage.</li></ol><p class="uc-note">30 minutes de lavage continu est la règle absolue. Chaque minute de retard aggrave irréversiblement les dommages cornéens.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener">WHO Eye Care 2019</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32200100/" target="_blank" rel="noopener">Ophthalmology 2020 — Chemical burns</a></div></div></div></div>
 
   <div class="scat">Intoxications</div>
-  <div class="ug"><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Ingestion toxique</h4></div></div><p class="ua"><span data-gloss="charbon-active" style="border-bottom:1px dashed var(--accent);cursor:pointer;">charbon activé</span> 1g/kg dès que possible · CI : caustiques, HC, pétro · JAMAIS faire vomir</p><div class="uc-body"><ol><li>Note l'heure d'ingestion et identifie le produit si possible.</li><li>Ne provoque pas de vomissements si : produit caustique, hydrocarbure, ou personne inconsciente.</li><li>Charbon activé si disponible (moins de 2 heures après ingestion) : 50 g dans 250 mL d'eau à boire.</li><li>Caustiques : eau ou lait (200 mL) pour diluer.</li><li>Position latérale de sécurité si inconscient ou somnolent.</li><li>Surveille conscience, respiration, convulsions.</li><li>Garde l'emballage pour identifier précisément le produit.</li></ol><p class="uc-note">Le charbon activé est l'antidote universel le plus accessible. Il doit figurer dans tout kit autonome : 2 à 3 sachets de 25 g suffisent pour la plupart des intoxications adultes.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener">WHO Poisoning Prevention 2020</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/15366091/" target="_blank" rel="noopener">Toxicol Rev 2004 — Charcoal</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Méthanol (alcool de bois)</h4></div></div><p class="ua">Éthanol 40° (vodka) 1mL/kg oral toutes 4h = antidote compétitif · Dialyse si disponible</p><div class="uc-body"><ol><li>Reconnais : ingestion d'alcool industriel ou de parfums frelatés. Après 6 à 24 heures : vision trouble, céphalées, nausées.</li><li>Antidote : éthanol (alcool alimentaire). Il entre en compétition avec le méthanol pour l'enzyme qui le transforme en formaldéhyde toxique.</li><li>Dose : 1 mL/kg d'alcool à 95° (ou 3 mL/kg de whisky à 40°) immédiatement, puis 0,3 mL/kg/h en entretien.</li><li>Charbon activé si ingestion de moins d'une heure.</li><li>Bicarbonate de sodium pour combattre l'acidose : 1 cuillère à café dans 500 mL d'eau à boire.</li><li>Hydratation orale intensive.</li><li>Surveillance conscience et vision toutes les 30 minutes.</li></ol><p class="uc-note">Les lésions visuelles sont souvent irréversibles après 24 heures. L'antidote éthanol doit être administré tôt, avant même l'apparition des premiers symptômes.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/WHO-HSE-PHE-IHE-2014.01" target="_blank" rel="noopener">WHO Methanol Poisoning 2013</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/29924957/" target="_blank" rel="noopener">NEJM 2018 — Methanol</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Intoxication CO</h4></div></div><p class="ua">Évacuer IMMÉDIAT · Oxygène 100% masque haute concentration · RCP si arrêt</p><div class="uc-body"><ol><li>Reconnais le contexte : chauffage au bois ou gaz en espace confiné, générateur, incendie. Symptômes : maux de tête en casque, nausées, vertiges, touchant plusieurs personnes simultanément.</li><li>Evacuation immédiate à l'air libre — c'est le traitement principal.</li><li>Ne rentre pas seul dans un lieu suspect sans protection.</li><li>Oxygène pur à 100 % si disponible : masque haute concentration, 15 L/min.</li><li>Si inconscient : position latérale de sécurité, ventilation assistée si nécessaire.</li><li>Surveille 4 à 6 heures même après récupération — risque de complications retardées.</li></ol><p class="uc-note">Le monoxyde de carbone est indétectable sans capteur (inodore et incolore). Un détecteur de CO est un équipement de sécurité indispensable dans tout habitat utilisant une combustion.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/carbon-monoxide" target="_blank" rel="noopener">WHO CO Poisoning 2004</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19939926/" target="_blank" rel="noopener">NEJM 2009 — CO Poisoning</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev dif"><span class="sd"></span>Urgence différée</div><h4>Envenimation (serpent)</h4></div></div><p class="ua">Immobiliser membre · Position déclive · AUCUN garrot, incision, aspiration · Surveiller coagulopathie</p><div class="uc-body"><ol><li>Eloigne la personne du serpent. Note la description si possible, sans prendre de risque.</li><li>Ce qu'il ne faut PAS faire : ne suce pas le venin, ne pose pas de garrot, ne fais pas d'incision, ne brûle pas la plaie.</li><li>Immobilise le membre mordu comme une fracture : attelle, ne bouge pas. Le mouvement accélère l'absorption du venin.</li><li>Maintiens le membre au niveau du coeur.</li><li>Retire les bijoux et vêtements serrés avant que le gonflement commence.</li><li>Trace un trait de stylo autour du gonflement toutes les 30 minutes pour suivre l'évolution.</li><li>Sérum antivenimeux : seul traitement efficace, administré par voie intraveineuse en milieu médical.</li><li>Paracétamol uniquement — pas d'aspirine ni d'ibuprofène (risque hémorragique).</li></ol><p class="uc-note">En zone à risque, le sérum antivenimeux polyvalent doit être stocké au réfrigérateur (2 à 8°C). Identifier les espèces locales avant toute expédition.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241515641" target="_blank" rel="noopener">WHO Snakebite 2019</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33453783/" target="_blank" rel="noopener">Lancet 2021 — Antivenoms</a></div></div></div></div>
+  <div class="ug"><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Ingestion toxique</h4></div></div><p class="ua"><span data-gloss="charbon-active" style="border-bottom:1px dashed var(--accent);cursor:pointer;">charbon activé</span> 1g/kg dès que possible · CI : caustiques, HC, pétro · JAMAIS faire vomir</p><div class="uc-body"><ol><li>Note l'heure d'ingestion et identifie le produit si possible.</li><li>Ne provoque pas de vomissements si : produit caustique, hydrocarbure, ou personne inconsciente.</li><li>Charbon activé si disponible (moins de 2 heures après ingestion) : 50 g dans 250 mL d'eau à boire.</li><li>Caustiques : eau ou lait (200 mL) pour diluer.</li><li>Position latérale de sécurité si inconscient ou somnolent.</li><li>Surveille conscience, respiration, convulsions.</li><li>Garde l'emballage pour identifier précisément le produit.</li></ol><p class="uc-note">Le charbon activé est l'antidote universel le plus accessible. Il doit figurer dans tout kit autonome : 2 à 3 sachets de 25 g suffisent pour la plupart des intoxications adultes.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener">WHO Poisoning Prevention 2020</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/15366091/" target="_blank" rel="noopener">Toxicol Rev 2004 — Charcoal</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Méthanol (alcool de bois)</h4></div></div><p class="ua">Éthanol 40° (vodka) 1mL/kg oral toutes 4h = antidote compétitif · Dialyse si disponible</p><div class="uc-body"><ol><li>Reconnais : ingestion d'alcool industriel ou de parfums frelatés. Après 6 à 24 heures : vision trouble, céphalées, nausées.</li><li>Antidote : éthanol (alcool alimentaire). Il entre en compétition avec le méthanol pour l'enzyme qui le transforme en formaldéhyde toxique.</li><li>Dose : 1 mL/kg d'alcool à 95° (ou 3 mL/kg de whisky à 40°) immédiatement, puis 0,3 mL/kg/h en entretien.</li><li>Charbon activé si ingestion de moins d'une heure.</li><li>Bicarbonate de sodium pour combattre l'acidose : 1 cuillère à café dans 500 mL d'eau à boire.</li><li>Hydratation orale intensive.</li><li>Surveillance conscience et vision toutes les 30 minutes.</li></ol><p class="uc-note">Les lésions visuelles sont souvent irréversibles après 24 heures. L'antidote éthanol doit être administré tôt, avant même l'apparition des premiers symptômes.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/WHO-HSE-PHE-IHE-2014.01" target="_blank" rel="noopener">WHO Methanol Poisoning 2013</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/29924957/" target="_blank" rel="noopener">NEJM 2018 — Methanol</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev vit"><span class="sd"></span>Vital immédiat</div><h4>Intoxication CO</h4></div></div><p class="ua">Évacuer IMMÉDIAT · Oxygène 100% masque haute concentration · RCP si arrêt</p><div class="uc-body"><ol><li>Reconnais le contexte : chauffage au bois ou gaz en espace confiné, générateur, incendie. Symptômes : maux de tête en casque, nausées, vertiges, touchant plusieurs personnes simultanément.</li><li>Evacuation immédiate à l'air libre — c'est le traitement principal.</li><li>Ne rentre pas seul dans un lieu suspect sans protection.</li><li>Oxygène pur à 100 % si disponible : masque haute concentration, 15 L/min.</li><li>Si inconscient : position latérale de sécurité, ventilation assistée si nécessaire.</li><li>Surveille 4 à 6 heures même après récupération — risque de complications retardées.</li></ol><p class="uc-note">Le monoxyde de carbone est indétectable sans capteur (inodore et incolore). Un détecteur de CO est un équipement de sécurité indispensable dans tout habitat utilisant une combustion.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/carbon-monoxide" target="_blank" rel="noopener">WHO CO Poisoning 2004</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/19939926/" target="_blank" rel="noopener">NEJM 2009 — CO Poisoning</a></div></div></div><div class="uc"><div class="uc-toggle"><div><div class="sev dif"><span class="sd"></span>Urgence différée</div><h4>Envenimation (serpent)</h4></div></div><p class="ua">Immobiliser membre · Position déclive · AUCUN garrot, incision, aspiration · Surveiller coagulopathie</p><div class="uc-body"><ol><li>Eloigne la personne du serpent. Note la description si possible, sans prendre de risque.</li><li>Ce qu'il ne faut PAS faire : ne suce pas le venin, ne pose pas de garrot, ne fais pas d'incision, ne brûle pas la plaie.</li><li>Immobilise le membre mordu comme une fracture : attelle, ne bouge pas. Le mouvement accélère l'absorption du venin.</li><li>Maintiens le membre au niveau du coeur.</li><li>Retire les bijoux et vêtements serrés avant que le gonflement commence.</li><li>Trace un trait de stylo autour du gonflement toutes les 30 minutes pour suivre l'évolution.</li><li>Sérum antivenimeux : seul traitement efficace, administré par voie intraveineuse en milieu médical.</li><li>Paracétamol uniquement — pas d'aspirine ni d'ibuprofène (risque hémorragique).</li></ol><p class="uc-note">En zone à risque, le sérum antivenimeux polyvalent doit être stocké au réfrigérateur (2 à 8°C). Identifier les espèces locales avant toute expédition.</p><div class="uc-refs"><span class="uc-refs-label">Sources :</span> <a href="https://www.who.int/publications/i/item/9789241515641" target="_blank" rel="noopener">WHO Snakebite 2019</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/33453783/" target="_blank" rel="noopener">Lancet 2021 — Antivenoms</a></div>
+<div class="ref-section" style="margin-top:40px;">
+  <h3>Références scientifiques</h3>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Arrêt cardio-vasculaire</div>
+    <div class="ref-item">Panchal AR, Bartos JA, Cabañas JG, et al. "Part 3: Adult Basic and Advanced Life Support: 2020 AHA Guidelines for CPR and Emergency Cardiovascular Care." <em>Circulation.</em> 2020;142(16 suppl 2):S366–S468. <a href="https://doi.org/10.1161/CIR.0000000000000916" target="_blank" rel="noopener">DOI: 10.1161/CIR.0000000000000916</a></div>
+    <div class="ref-item">Soar J, Böttiger BW, Carli P, et al. "European Resuscitation Council Guidelines 2021: Adult advanced life support." <em>Resuscitation.</em> 2021;161:115–151. <a href="https://doi.org/10.1016/j.resuscitation.2021.02.010" target="_blank" rel="noopener">DOI: 10.1016/j.resuscitation.2021.02.010</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Hémorragies</div>
+    <div class="ref-item">Rossaint R, Afshari A, Bouillon B, et al. "The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition." <em>Crit Care.</em> 2023;27:80. <a href="https://doi.org/10.1186/s13054-023-04327-7" target="_blank" rel="noopener">DOI: 10.1186/s13054-023-04327-7</a></div>
+    <div class="ref-item">American College of Surgeons, Committee on Trauma. <em>ATLS: Advanced Trauma Life Support Student Course Manual.</em> 10e éd. Chicago : ACS ; 2018. ISBN 978-0-9968262-3-5.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Voies aériennes</div>
+    <div class="ref-item">Higgs A, McGrath BA, Goddard C, et al. "Guidelines for the management of tracheal intubation in critically ill adults." <em>Br J Anaesth.</em> 2018;120(2):323–352. <a href="https://doi.org/10.1016/j.bja.2017.10.021" target="_blank" rel="noopener">DOI: 10.1016/j.bja.2017.10.021</a></div>
+    <div class="ref-item">Difficult Airway Society. <em>DAS Guidelines for the management of unanticipated difficult intubation in adults.</em> Anaesthesia. 2015;70(11):1286–1301. <a href="https://doi.org/10.1111/anae.13233" target="_blank" rel="noopener">DOI: 10.1111/anae.13233</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">États de choc</div>
+    <div class="ref-item">Evans L, Rhodes A, Alhazzani W, et al. "Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021." <em>Intensive Care Med.</em> 2021;47(11):1181–1247. <a href="https://doi.org/10.1007/s00134-021-06506-y" target="_blank" rel="noopener">DOI: 10.1007/s00134-021-06506-y</a></div>
+    <div class="ref-item">American College of Surgeons, Committee on Trauma. <em>ATLS: Advanced Trauma Life Support Student Course Manual.</em> 10e éd. ACS ; 2018.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Traumatismes</div>
+    <div class="ref-item">American College of Surgeons, Committee on Trauma. <em>ATLS: Advanced Trauma Life Support Student Course Manual.</em> 10e éd. Chicago : ACS ; 2018. ISBN 978-0-9968262-3-5.</div>
+    <div class="ref-item">Roberts I, Shakur H, Coats T, et al. "The CRASH-2 trial: tranexamic acid in bleeding trauma patients." <em>Health Technol Assess.</em> 2013;17(10):1–79. <a href="https://doi.org/10.3310/hta17100" target="_blank" rel="noopener">DOI: 10.3310/hta17100</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Pulmonaire</div>
+    <div class="ref-item">Mandell LA, Wunderink RG, Anzueto A, et al. "IDSA/ATS Consensus Guidelines on the Management of Community-Acquired Pneumonia in Adults." <em>Clin Infect Dis.</em> 2007;44(Suppl 2):S27–72. <a href="https://doi.org/10.1086/511159" target="_blank" rel="noopener">DOI: 10.1086/511159</a></div>
+    <div class="ref-item">Global Initiative for Chronic Obstructive Lung Disease (GOLD). <em>Global Strategy for the Diagnosis, Management and Prevention of COPD.</em> 2023 Report. <a href="https://goldcopd.org/2023-gold-report/" target="_blank" rel="noopener">goldcopd.org</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Neurologique</div>
+    <div class="ref-item">Trinka E, Cock H, Hesdorffer D, et al. "A definition and classification of status epilepticus — ILAE Task Force." <em>Epilepsia.</em> 2015;56(10):1515–1523. <a href="https://doi.org/10.1111/epi.13121" target="_blank" rel="noopener">DOI: 10.1111/epi.13121</a></div>
+    <div class="ref-item">Brouwer MC, Tunkel AR, van de Beek D. "Epidemiology, diagnosis, and antimicrobial treatment of acute bacterial meningitis." <em>Clin Microbiol Rev.</em> 2010;23(3):467–492. <a href="https://doi.org/10.1128/CMR.00070-09" target="_blank" rel="noopener">DOI: 10.1128/CMR.00070-09</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Infectieux</div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>WHO Model List of Essential Medicines</em>, 23e liste, 2023. WHO/MHP/HPS/EML/2023.02. <a href="https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.02" target="_blank" rel="noopener">who.int</a></div>
+    <div class="ref-item">Laxminarayan R, Duse A, Wattal C, et al. "Antibiotic resistance — the need for global solutions." <em>Lancet Infect Dis.</em> 2013;13(12):1057–1098. <a href="https://doi.org/10.1016/S1473-3099(13)70318-9" target="_blank" rel="noopener">DOI: 10.1016/S1473-3099(13)70318-9</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Obstétrique</div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>WHO Recommendations for the Prevention and Treatment of Postpartum Haemorrhage.</em> Genève : OMS ; 2012. ISBN 978 92 4 154850 2. <a href="https://www.who.int/publications/i/item/9789241548502" target="_blank" rel="noopener">who.int</a></div>
+    <div class="ref-item">Duley L. "The global impact of pre-eclampsia and eclampsia." <em>Semin Perinatol.</em> 2009;33(3):130–137. <a href="https://doi.org/10.1053/j.semperi.2009.02.010" target="_blank" rel="noopener">DOI: 10.1053/j.semperi.2009.02.010</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Digestif &amp; Urinaire</div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>The Treatment of Diarrhoea: A Manual for Physicians.</em> 4e révision. Genève : OMS ; 2005. WHO/FCH/CAH/05.2.</div>
+    <div class="ref-item">Gupta K, Hooton TM, Naber KG, et al. "International clinical practice guidelines for treatment of acute uncomplicated cystitis and pyelonephritis in women — IDSA/ESCMID." <em>Clin Infect Dis.</em> 2011;52(5):e103–120. <a href="https://doi.org/10.1093/cid/ciq257" target="_blank" rel="noopener">DOI: 10.1093/cid/ciq257</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Dentaire</div>
+    <div class="ref-item">Segura-Egea JJ, Gould K, Şen BH, et al. "Antibiotics in Endodontics: a review." <em>Int Endod J.</em> 2017;50(12):1169–1184. <a href="https://doi.org/10.1111/iej.12741" target="_blank" rel="noopener">DOI: 10.1111/iej.12741</a></div>
+    <div class="ref-item">Robertson D, Smith AJ. "The microbiology of the acute dental abscess." <em>J Med Microbiol.</em> 2009;58(Pt 2):155–162. <a href="https://doi.org/10.1099/jmm.0.003517-0" target="_blank" rel="noopener">DOI: 10.1099/jmm.0.003517-0</a></div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Oculaire</div>
+    <div class="ref-item">Azari AA, Barney NP. "Conjunctivitis: a systematic review of diagnosis and treatment." <em>JAMA.</em> 2013;310(16):1721–1730. <a href="https://doi.org/10.1001/jama.2013.280318" target="_blank" rel="noopener">DOI: 10.1001/jama.2013.280318</a></div>
+    <div class="ref-item">Kanski JJ, Bowling B. <em>Clinical Ophthalmology: A Systematic Approach.</em> 8e éd. Amsterdam : Elsevier ; 2015. ISBN 978-0-7020-5562-6.</div>
+  </div>
+
+  <div class="ref-bloc">
+    <div class="ref-bloc-title">Intoxications</div>
+    <div class="ref-item">Dart RC, ed. <em>Medical Toxicology.</em> 3e éd. Philadelphie : Lippincott Williams &amp; Wilkins ; 2004. ISBN 978-0-7817-2845-4.</div>
+    <div class="ref-item">Organisation mondiale de la santé. <em>Poisoning Prevention and Management.</em> Genève : OMS ; 2020. WHO/CED/PHE/EPE/20.04.3. <a href="https://www.who.int/publications/i/item/9789241516570" target="_blank" rel="noopener">who.int</a></div>
+  </div>
+</div>
+</div></div></div>
 </div>
 </div><!-- /v-soigner -->
 <script>
